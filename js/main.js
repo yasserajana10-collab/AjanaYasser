@@ -425,6 +425,16 @@ lb.addEventListener("click", e=>{ if (e.target === lb) lb.close(); });
 lb.addEventListener("close", ()=>{ document.getElementById("lbMedia").innerHTML = ""; if (opener) opener.focus({preventScroll:true}); });
 lb.addEventListener("keydown", e=>{ if (e.key==="ArrowRight") step(1); if (e.key==="ArrowLeft") step(-1); });
 
+/* ---------- throttle readout (shift lights + r/min) ---------- */
+const thr = document.getElementById("thr"), thrRpm = document.getElementById("thrRpm");
+const leds = [...thr.querySelectorAll(".thr-leds i")];
+let litPrev = -1;
+function thrUI(v){
+  thrRpm.textContent = (Math.round(v*1000/50)*50).toLocaleString("en-US");
+  const lit = Math.max(0, Math.min(10, Math.round((v - 1.3) / 10.2 * 10)));
+  if (lit !== litPrev){ litPrev = lit; leds.forEach((l,k)=>l.classList.toggle("on", k < lit)); }
+}
+
 /* ---------- tachometer (ignition sweep) ---------- */
 const svg = document.getElementById("tach");
 const C = 200, R = 168;
@@ -443,21 +453,24 @@ s += `<g id="needle"><line class="t-needle" x1="200" y1="222" x2="200" y2="52"/>
 svg.innerHTML = s;
 const needle = document.getElementById("needle"), rpm = document.getElementById("rpm");
 let val = 0, busy = false;
-function setV(v){ val = v; needle.setAttribute("transform", `rotate(${-135 + v*22.5} 200 200)`); rpm.textContent = Math.round(v*1000/50)*50; }
+function setV(v){ val = v; needle.setAttribute("transform", `rotate(${-135 + v*22.5} 200 200)`); rpm.textContent = Math.round(v*1000/50)*50; thrUI(v); }
 const easeOut = k => 1 - Math.pow(1-k, 3), easeInOut = k => k<.5 ? 4*k*k*k : 1 - Math.pow(-2*k+2,3)/2;
 function go(to, dur, ease){ return new Promise(res=>{ const from=val, t0=performance.now();
   (function f(t){ const k=Math.min(1,(t-t0)/dur); setV(from+(to-from)*ease(k)); k<1?requestAnimationFrame(f):res(); })(t0); }); }
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* live engine: ignition sweep, idle flutter, scroll = throttle, hover/tap = rev */
-let throttle = 0, live = false;
+let throttle = 0, live = false, held = false, tapUntil = 0, lastEngaged = -1e9, lastHit = -1e9, revT;
 const tachWrap = document.querySelector(".tach-wrap");
 function engine(t){
-  throttle *= 0.94;
+  const engaged = held || t < tapUntil;
+  throttle *= engaged ? 0.995 : 0.94;
   const flutter = Math.sin(t/70)*0.05 + Math.sin(t/23)*0.03;
   let want = 1.3 + Math.min(throttle, 10.9) + flutter;
   if (want > 11.8) want = 11.2 + Math.random()*0.5;   // rev limiter bounce
   setV(val + (want - val) * 0.14);
   tachWrap.classList.toggle("redline", val > 10);
+  if (engaged) lastEngaged = t;
+  if (val > 10.4 && t - lastEngaged < 600 && t - lastHit > 1400){ lastHit = t; redlineHit(); }
   requestAnimationFrame(engine);
 }
 async function ignition(){
@@ -474,7 +487,46 @@ addEventListener("scroll", ()=>{ const d = Math.abs(scrollY - lastY); lastY = sc
 const blip = amt => { throttle = Math.max(throttle, amt); };
 document.getElementById("rev").addEventListener("mouseenter", ()=>blip(6.5));
 tachWrap.addEventListener("mouseenter", ()=>blip(8));
-tachWrap.addEventListener("click", ()=>blip(11));
+tachWrap.addEventListener("click", ()=>tapRev());
+
+/* ---------- throttle control ----------
+   Desktop: hold the button, then scroll the wheel down to open the throttle.
+   Phone / keyboard: tap (or press Space) to snap it wide open.            */
+function redlineHit(){
+  const h = document.documentElement;
+  h.classList.remove("rev-hit"); thr.classList.remove("hit"); void h.offsetWidth;
+  h.classList.add("rev-hit"); thr.classList.add("hit", "used");
+  clearTimeout(revT); revT = setTimeout(()=>{ h.classList.remove("rev-hit"); thr.classList.remove("hit"); }, 700);
+  if (navigator.vibrate) { try { navigator.vibrate(35); } catch(e){} }
+}
+function tapRev(){
+  tapUntil = performance.now() + 380; throttle = 11.5;
+  thr.classList.add("held"); setTimeout(()=>{ if (!held) thr.classList.remove("held"); }, 220);
+}
+let heldAt = 0, wheeled = false;
+function release(){
+  if (!held) return;
+  held = false; thr.classList.remove("held");
+  if (!wheeled && performance.now() - heldAt < 260) blip(6);   // quick click = small blip
+}
+thr.addEventListener("pointerdown", e=>{
+  if (e.pointerType === "mouse"){
+    if (e.button !== 0) return;
+    e.preventDefault(); held = true; wheeled = false; heldAt = performance.now();
+    thr.classList.add("held"); throttle = Math.max(throttle, 1.2);
+  } else tapRev();
+});
+addEventListener("pointerup", release);
+addEventListener("pointercancel", release);
+addEventListener("blur", release);
+addEventListener("wheel", e=>{
+  if (!held) return;
+  e.preventDefault(); wheeled = true;
+  const k = e.deltaMode === 1 ? 0.6 : 0.018;
+  throttle = Math.min(11.5, Math.max(0, throttle + e.deltaY * k));
+}, {passive:false});
+thr.addEventListener("keydown", e=>{ if ((e.key === " " || e.key === "Enter") && !e.repeat){ e.preventDefault(); tapRev(); } });
+thr.addEventListener("contextmenu", e=>e.preventDefault());
 
 /* ---------- gear indicator follows scroll ---------- */
 const gearNow = document.getElementById("gearNow");
@@ -483,7 +535,7 @@ const io = new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if (!en.isIntersecting) return;
     const g = en.target.dataset.gear;
-    gearNow.textContent = g;
+    if (gearNow.textContent !== g){ gearNow.textContent = g; if (!reduce){ gearNow.classList.remove("shift"); void gearNow.offsetWidth; gearNow.classList.add("shift"); } }
     links.forEach(a=>{
       const on = a.dataset.g === g; a.classList.toggle("on", on);
       if (on){ const ol = a.closest("ol"); ol.scrollLeft = a.parentElement.offsetLeft - ol.offsetLeft - 8; }
@@ -518,5 +570,19 @@ document.querySelectorAll(".vplayer").forEach(box=>{
   all[all.length - 1].addEventListener("error", fail);
   v.addEventListener("ended", ()=>{ box.classList.remove("on"); v.currentTime = 0; });
 });
+
+/* ---------- theme switch: black + orange / beige + orange ---------- */
+const themeBtns = document.querySelectorAll("[data-set-theme]");
+const metaTheme = document.querySelector('meta[name="theme-color"]');
+function applyTheme(t, fromUser){
+  const h = document.documentElement;
+  if (fromUser && !reduce){ h.classList.add("theming"); clearTimeout(applyTheme.t); applyTheme.t = setTimeout(()=>h.classList.remove("theming"), 500); }
+  h.setAttribute("data-theme", t);
+  themeBtns.forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.setTheme === t)));
+  metaTheme.setAttribute("content", t === "light" ? "#E8DCC6" : "#000000");
+  if (fromUser){ try { localStorage.setItem("ya-theme", t); } catch(e){} }
+}
+applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark", false);
+themeBtns.forEach(b=>b.addEventListener("click", ()=>applyTheme(b.dataset.setTheme, true)));
 
 document.getElementById("toTop").onclick = ()=>window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
