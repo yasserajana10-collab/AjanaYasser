@@ -384,6 +384,196 @@ const PROJECTS = {
     "alt": "Two Bio Rituel spray bottles with pink triggers"
    }
   ]
+ },
+ "ads-rating": {
+  "section": "ads",
+  "title": "4,6/5 on Google",
+  "client": "Belocum, Q4 app campaign",
+  "tags": [
+   "Paid ad",
+   "Social proof",
+   "UI mockup"
+  ],
+  "short": "A star rating that reads as evidence, not a boast.",
+  "problem": "Every staffing app says it’s trusted, so the word has stopped meaning anything. Belocum had something better than a claim: a 4.6 rating on Google from real reviews. The challenge was making one number feel like proof at thumb speed, instead of another brand patting itself on the back.",
+  "decisions": [
+   {
+    "h": "A headline that dares you to doubt it",
+    "p": "“You can’t fake that” turns the rating from a statistic into a statement. It answers the viewer’s skepticism before they have time to feel it."
+   },
+   {
+    "h": "Show where the number comes from",
+    "p": "The phone shows the Google listing itself: the name, the review count and the Reviews tab. People recognize that screen instantly, so the rating borrows Google’s credibility instead of relying on ours."
+   },
+   {
+    "h": "Stars lifted off the screen",
+    "p": "The rating is pulled out of the phone as an oversized bar in the brand’s lime, so it reads from across the feed. The last star is only partly filled, which keeps the 4.6 honest instead of rounding it up to five."
+   },
+   {
+    "h": "Brand navy on a soft gradient",
+    "p": "The headline and logo sit in Belocum’s deep navy over the campaign’s teal-to-lime gradient, the same system used across all five ads."
+   }
+  ],
+  "images": [
+   {
+    "src": "assets/work/ads-google-rating.jpg",
+    "w": 1400,
+    "h": 1400,
+    "alt": "Belocum ad: 4,6/5 on Google. You can’t fake that. A phone shows the Google listing with five large lime stars lifted off the screen"
+   }
+  ]
+ },
+ "ads-downloads": {
+  "section": "ads",
+  "title": "34K+ Downloads",
+  "client": "Belocum, Q4 app campaign",
+  "tags": [
+   "Paid ad",
+   "3D icon",
+   "Social proof"
+  ],
+  "short": "A download count turned into the campaign’s signature line.",
+  "problem": "Download numbers are the most common proof point in app advertising, and people scroll past them without reading. 34K+ is a real milestone for Belocum, but on its own it’s just a figure. It needed to feel like a moment for the brand, and to tie into the #BeAwesome campaign line.",
+  "decisions": [
+   {
+    "h": "The headline plays on the name",
+    "p": "“That’s BeAwesome” sets “Be” in a serif, echoing the Be in BeLOCUM. The number gets a payoff, and the campaign hashtag becomes part of the sentence instead of a tag at the bottom."
+   },
+   {
+    "h": "A 3D icon made for the brand",
+    "p": "The download button isn’t stock 3D. I created it from scratch in Belocum’s turquoise and navy, with the same soft, rounded, tactile style as the rest of the campaign icons, so it looks like it belongs to the app’s world."
+   },
+   {
+    "h": "One object, lots of air",
+    "p": "A single floating icon with a soft shadow in the center, the headline top left, the store badges bottom left. Nothing competes, so it reads in one glance."
+   },
+   {
+    "h": "Both store badges",
+    "p": "The figure covers iPhone and Android, so both badges are shown, and whoever sees it knows the app is there for them."
+   }
+  ],
+  "images": [
+   {
+    "src": "assets/work/ads-downloads.jpg",
+    "w": 1400,
+    "h": 1400,
+    "alt": "Belocum ad: 34K+ Downloads. That’s BeAwesome. A turquoise 3D download icon floats over a teal and lime gradient"
+   }
+  ]
+ },
+ "ads-per-diem": {
+  "section": "ads",
+  "title": "A Paid Lunch? We Call It Per Diem.",
+  "client": "Belocum, Q4 app campaign",
+  "tags": [
+   "Paid ad",
+   "App screen",
+   "Benefit messaging"
+  ],
+  "short": "A contract term translated into a benefit anyone wants.",
+  "problem": "Per diem is one of Belocum’s best benefits, but it’s a contract word. Many people skip it, and some don’t know what it covers. The ad had to turn a line in the fine print into something people actually want, without sounding like a benefits brochure.",
+  "decisions": [
+   {
+    "h": "Question first, term second",
+    "p": "The headline asks the thing people care about, a paid lunch, then names it. The viewer gets the benefit and learns the word in the same breath."
+   },
+   {
+    "h": "A real screen from the app",
+    "p": "The phone shows Belocum’s actual Contracts screen, with thousands of available contracts and a real shift card. It proves the benefit lives inside real work, not only in the ad."
+   },
+   {
+    "h": "Cropped close, sized for the feed",
+    "p": "The phone rises from the bottom edge and is cropped close, so the screen text stays readable even when the ad shows up small."
+   },
+   {
+    "h": "Start of a headline series",
+    "p": "“We call it…” became a pattern the campaign repeats, so each new benefit ad is recognizable as part of the same voice."
+   }
+  ],
+  "images": [
+   {
+    "src": "assets/work/ads-per-diem.jpg",
+    "w": 1400,
+    "h": 1400,
+    "alt": "Belocum ad: A paid lunch? We call it per diem. An iPhone shows the Belocum Contracts screen with available shifts"
+   }
+  ]
+ },
+ "ads-commute": {
+  "section": "ads",
+  "title": "Paid to Commute? We Call It Normal.",
+  "client": "Belocum, Q4 app campaign",
+  "tags": [
+   "Paid ad",
+   "3D map",
+   "Benefit messaging"
+  ],
+  "short": "Travel pay made visible with a map built for the brand.",
+  "problem": "Being paid for travel is a real advantage for professionals who take contracts in different places. But “travel compensation” is dull and hard to picture. The ad needed an image that makes the commute itself feel like part of the deal.",
+  "decisions": [
+   {
+    "h": "The same headline system",
+    "p": "It follows the per diem ad’s question-and-answer pattern. “We call it normal” reframes a perk other employers treat as special as something Belocum simply does."
+   },
+   {
+    "h": "A 3D map created from scratch",
+    "p": "Instead of a screenshot of a real map, which would look like any navigation app, I built a stylized 3D region in the brand’s lime and navy, with trees, small buildings and roads matched to the campaign’s soft, clay-like style."
+   },
+   {
+    "h": "The route is the message",
+    "p": "A glowing turquoise route connects three pins across the map, so the commute becomes the hero of the image: several places, one paid journey."
+   },
+   {
+    "h": "Closing with the campaign line",
+    "p": "#BeAwesome sits bottom right and the store badges bottom left, the same layout used in the other benefit ads."
+   }
+  ],
+  "images": [
+   {
+    "src": "assets/work/ads-commute.jpg",
+    "w": 1400,
+    "h": 1400,
+    "alt": "Belocum ad: Paid to commute? We call it normal. A custom lime and navy 3D map with a glowing route between three location pins"
+   }
+  ]
+ },
+ "ads-staffing": {
+  "section": "ads",
+  "title": "Not Just a Staffing App.",
+  "client": "Belocum, Q4 app campaign",
+  "tags": [
+   "Paid ad",
+   "3D icons",
+   "Brand positioning"
+  ],
+  "short": "The whole platform explained in three pieces that lock together.",
+  "problem": "Staffing apps are usually seen as job boards: a list of shifts and nothing more. Belocum connects professionals and clinics directly, with the contract in the middle handling the details. The ad had to explain that relationship in a single image, with almost no words.",
+  "decisions": [
+   {
+    "h": "Three pieces that lock together",
+    "p": "A professional, the app and a clinic are joined like puzzle pieces. The app is literally the connection between the two, which says “more than a job board” without a paragraph of copy."
+   },
+   {
+    "h": "Icons made to match the brand",
+    "p": "The person, the phone with its contract cards and the clinic building were all created from scratch in Belocum’s turquoise and navy, in the same rounded 3D style as the download icon and the map, so the whole campaign feels like one set."
+   },
+   {
+    "h": "One accent: the lime check",
+    "p": "The only lime in the illustration is the check on the middle contract. It marks a confirmed match and pulls the eye to the result the app delivers."
+   },
+   {
+    "h": "A short headline",
+    "p": "Four words, centered. The image does the explaining, so the headline only has to change how people think about the category."
+   }
+  ],
+  "images": [
+   {
+    "src": "assets/work/ads-staffing.jpg",
+    "w": 1400,
+    "h": 1400,
+    "alt": "Belocum ad: Not just a staffing app. Custom 3D icons of a person, a phone with contract cards and a clinic lock together like puzzle pieces"
+   }
+  ]
  }
 };
 
