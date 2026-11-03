@@ -1,289 +1,891 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>RPM Wheel | Yasser Ajana, design and motion portfolio</title>
-<meta name="description" content="Art director, graphic and motion designer based in Tangier, Morocco. Brand identity, social, manipulation, paid ads and motion work.">
-<meta name="theme-color" content="#000000">
+<meta name="description" content="Yasser Ajana, art director, graphic and motion designer based in Tangier, Morocco. Design and motion portfolio 2026.">
+<meta property="og:title" content="Yasser Ajana, RPM Wheel portfolio 2026">
+<meta property="og:description" content="Brand systems, campaigns and edits with rhythm, control and a bit of speed.">
+<meta property="og:image" content="assets/img/036.jpg">
+<meta name="theme-color" content="#FF5A1F">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>Yasser Ajana — RPM Wheel portfolio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E9DCC4; --paper-2:#DFCFB2; --paper-3:#F2E9D9;
+  --ink:#1A1410; --muted:#64574A; --line:rgba(26,20,16,.16);
+  --orange:#FF5A1F; --orange-ink:#B93A0A; --on-orange:#1A1410;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#1D1712; --paper-2:#28201A; --paper-3:#231C16;
+    --ink:#EFE3CD; --muted:#B0A18A; --line:rgba(239,227,205,.16);
+    --orange-ink:#FF7A45; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1D1712; --paper-2:#28201A; --paper-3:#231C16;
+  --ink:#EFE3CD; --muted:#B0A18A; --line:rgba(239,227,205,.16);
+  --orange-ink:#FF7A45; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+main{overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:80;background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{width:min(1400px,100% - 56px);margin-inline:auto}
+@media (max-width:600px){.wrap{width:calc(100% - 36px)}}
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
 
-<!-- Link preview card (WhatsApp, LinkedIn, Facebook, iMessage).
-     Points at the live GitHub Pages address. -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="RPM Wheel | Yasser Ajana, design and motion">
-<meta property="og:site_name" content="RPM Wheel">
-<meta property="og:description" content="Art director, graphic and motion designer. Brand identity, social, paid ads and motion work.">
-<meta property="og:image" content="https://yasserajana10-collab.github.io/AjanaYasser/assets/img/share-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://yasserajana10-collab.github.io/AjanaYasser/">
-<meta name="twitter:card" content="summary_large_image">
+/* loader */
+#loader{position:fixed;inset:0;z-index:100;background:var(--orange);color:var(--on-orange);display:grid;place-items:center;transition:clip-path 1s cubic-bezier(.76,0,.24,1);clip-path:inset(0 0 0 0)}
+#loader.out{clip-path:inset(0 0 100% 0)}
+#loader .in{text-align:center}
+#loader svg{width:min(300px,64vw);overflow:visible}
+#loader .lv{font-family:var(--display);font-weight:900;font-size:clamp(56px,9vw,120px);line-height:.9;font-variant-numeric:tabular-nums}
+#loader .ll{font-weight:600;font-size:14px}
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=3">
-<script>(function(){var d=document.documentElement,t="dark";d.classList.add("js");try{if(localStorage.getItem("ya-theme")==="light")t="light"}catch(e){}d.setAttribute("data-theme",t)})()</script>
-<script src="js/main.js?v=3" defer></script>
+/* cursor */
+.cur{position:fixed;left:0;top:0;z-index:95;pointer-events:none;width:44px;height:44px;margin:-22px 0 0 -22px;border:1.5px solid var(--orange);border-radius:50%;display:grid;place-items:center;transition:width .25s,height .25s,margin .25s,background .25s;font:700 12px var(--body);color:var(--on-orange)}
+.cur span{opacity:0;transition:opacity .2s}
+.cur.big{width:92px;height:92px;margin:-46px 0 0 -46px;background:var(--orange)}
+.cur.big span{opacity:1}
+.cur-dot{position:fixed;left:0;top:0;z-index:96;pointer-events:none;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--orange)}
+@media (pointer:coarse),(prefers-reduced-motion:reduce){.cur,.cur-dot{display:none}}
+
+/* header */
+.top{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:70;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.top.solid{background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:42px;height:42px;overflow:visible}
+.logo span{white-space:nowrap;font-family:var(--display);font-weight:900;font-size:29px;color:var(--orange);line-height:1}
+.gears{margin-left:auto;display:flex;align-items:center;gap:2px;padding:4px;border:1px solid var(--line);background:color-mix(in srgb,var(--paper) 60%,transparent)}
+.gears a{font-family:var(--display);font-weight:800;font-size:19px;text-decoration:none;color:var(--muted);width:32px;height:34px;display:grid;place-items:center;transition:color .2s,background .2s}
+.gears a.on{background:var(--orange);color:var(--on-orange)}
+.gears a:hover:not(.on){color:var(--ink)}
+.tacho{font-family:var(--display);font-weight:800;font-size:22px;min-width:120px;text-align:right;font-variant-numeric:tabular-nums}
+.tacho small{font-family:var(--body);font-weight:500;font-size:11px;color:var(--muted);margin-left:4px}
+@media (max-width:440px){.logo span{display:none}}
+@media (max-width:760px){.tacho{display:none}.gears a{width:26px;font-size:17px}.logo span{font-size:22px}.logo svg{width:32px;height:32px}.top .wrap{gap:10px}}
+
+/* intro over showroom */
+.intro-name{position:absolute;left:0;right:0;top:11vh;margin:0;display:flex;flex-direction:column;align-items:center;pointer-events:none;z-index:0;will-change:transform,opacity}
+.intro-name span{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:min(30vh,25vw);line-height:.78;display:block;white-space:nowrap}
+.intro-name .b{color:var(--orange)}
+#ring{z-index:1}
+.hello{position:absolute;inset:0;z-index:4;pointer-events:none;will-change:opacity}
+.intro-top{position:absolute;left:max(28px,calc((100vw - 1400px)/2));top:100px}
+.booking{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;background:var(--paper-3);padding:8px 14px;border:1px solid var(--line)}
+.booking i{width:9px;height:9px;border-radius:50%;background:var(--orange);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,90,31,.55)}70%{box-shadow:0 0 0 10px rgba(255,90,31,0)}100%{box-shadow:0 0 0 0 rgba(255,90,31,0)}}
+.role{font-size:clamp(16px,1.4vw,20px);color:var(--muted);margin:14px 0 0;max-width:20em}
+.intro-bot{position:absolute;left:max(28px,calc((100vw - 1400px)/2));right:max(28px,calc((100vw - 1400px)/2));bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.intro-bot .lede{font-size:clamp(20px,1.9vw,28px);line-height:1.24;margin:0;font-weight:500;max-width:22em;background:color-mix(in srgb,var(--paper-2) 80%,transparent);padding:4px 0}
+.intro-bot .meta{text-align:right}
+.intro-bot .big{font-family:var(--display);font-weight:900;font-size:clamp(64px,7vw,116px);line-height:.8;color:var(--orange)}
+.intro-bot .meta p{margin:8px 0 0;color:var(--muted)}
+.intro-bot .meta b{color:var(--ink)}
+.cue{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.cue i{width:2px;height:22px;background:var(--orange);animation:cue 1.6s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.ring-head,.ring-info{transition:opacity .4s}
+.ring.intro-on .ring-head,.ring.intro-on .ring-info{opacity:0;pointer-events:none}
+.ring.intro-on .ring-info *{pointer-events:none!important}
+@media (max-width:760px){.intro-top{left:18px;top:88px}.intro-bot{left:18px;right:18px;flex-direction:column;align-items:flex-start;bottom:46px;gap:14px}.intro-bot .meta{text-align:left}.intro-name{top:20vh}.cue{display:none}}
+
+/* marquee */
+.marq{background:var(--orange);color:var(--on-orange);overflow:hidden;white-space:nowrap;padding:18px 0;position:relative;z-index:2}
+.marq div{display:inline-flex;gap:48px;animation:mq 26s linear infinite;font-family:var(--display);font-weight:900;font-size:clamp(36px,5vw,72px);line-height:1;text-transform:uppercase}
+.marq svg{width:.8em;height:.8em;flex:none;align-self:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* work index */
+.sec{padding:130px 0}
+.h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(64px,9vw,150px);line-height:.84;margin:0}
+.k{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;color:var(--orange-ink);margin:0 0 14px}
+.contents{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:64px;align-items:start}
+.contents .intro{font-size:clamp(20px,1.8vw,26px);line-height:1.35;margin:26px 0 0;max-width:19em}
+.idx{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.idx a{display:grid;grid-template-columns:90px 1fr auto;gap:22px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;position:relative;overflow:hidden}
+.idx a::before{content:"";position:absolute;inset:0;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.idx li{position:relative;z-index:0}
+.idx a:hover::before,.idx a:focus-visible::before{transform:scaleY(1)}
+.idx a:hover .n,.idx a:hover p,.idx a:hover .c{color:var(--on-orange)}
+.idx a:hover h3{color:var(--on-orange);transform:translateX(12px)}
+.idx .n{font-family:var(--display);font-weight:900;font-size:76px;line-height:.75;color:var(--orange);transition:color .3s;padding-left:6px}
+.idx h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,2.6vw,40px);text-transform:uppercase;margin:0 0 6px;line-height:.95;transition:transform .4s,color .3s}
+.idx p{margin:0;color:var(--muted);font-size:15px;max-width:42em;transition:color .3s}
+.idx .c{font-size:14px;color:var(--muted);white-space:nowrap;padding-right:12px;transition:color .3s}
+.peek{position:fixed;left:0;top:0;z-index:60;width:280px;pointer-events:none;opacity:0;transform:scale(.7) rotate(-4deg);transition:opacity .25s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.peek.on{opacity:1;transform:scale(1) rotate(-4deg)}
+.peek img{width:100%;aspect-ratio:4/5;object-fit:cover;border:6px solid var(--paper-3);box-shadow:0 30px 60px -20px rgba(26,20,16,.45)}
+@media (max-width:900px){.contents{grid-template-columns:1fr;gap:34px}.idx a{grid-template-columns:56px 1fr}.idx .c{display:none}.idx .n{font-size:50px}.peek{display:none}}
+
+/* ring */
+.ring{position:relative}
+.ring-stick{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--paper-2)}
+#ring{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.ring-head{position:absolute;left:0;right:0;top:96px;z-index:3;pointer-events:none}
+.ring-head .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.ring-head .h2{font-size:clamp(44px,5.2vw,84px)}
+.gearbar{display:flex;gap:4px;pointer-events:auto}
+.gearbar button{width:44px;height:44px;border:1px solid var(--line);background:var(--paper-3);font-family:var(--display);font-weight:800;font-size:20px;cursor:pointer;transition:background .2s,color .2s}
+.gearbar button.on{background:var(--ink);color:var(--paper)}
+.ring-info{position:absolute;left:0;right:0;bottom:34px;z-index:3;pointer-events:none}
+.ring-info .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:end}
+.ri-n{font-family:var(--display);font-weight:900;font-size:clamp(120px,14vw,220px);line-height:.72;color:var(--orange)}
+.ri-t .gt{font-weight:600;font-size:14px;color:var(--muted)}
+.ri-t h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(34px,3.6vw,58px);line-height:.9;margin:6px 0 6px}
+.ri-t .sub{color:var(--muted)}
+.ri-act{display:flex;gap:8px;pointer-events:auto;align-items:center}
+.ri-act button{height:52px;border:0;cursor:pointer;font-weight:700;font-size:15px}
+.ri-act .ar{width:52px;background:var(--paper-3);border:1px solid var(--line);font-size:20px}
+.ri-act .ar:hover{border-color:var(--orange)}
+.ri-act .open{background:var(--ink);color:var(--paper);padding:0 22px}
+.ri-act .open:hover{background:var(--orange);color:var(--on-orange)}
+.ri-count{font-family:var(--display);font-weight:800;font-size:18px;color:var(--muted);margin-top:10px;font-variant-numeric:tabular-nums}
+.ticks{display:flex;gap:3px;margin-top:12px}
+.ticks i{width:14px;height:8px;background:var(--line);transition:background .25s}
+.ticks i.f{background:var(--ink)}
+.ticks i.r{background:var(--orange)}
+.ring-fallback{display:none}
+.no-gl .ring{height:auto!important}.no-gl .ring-stick{display:none}.no-gl .ring-fallback{display:grid}
+.ring-fallback{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;padding:60px 0}
+.ring-fallback button{border:0;background:none;padding:0;text-align:left;cursor:pointer}
+.ring-fallback img{aspect-ratio:1;object-fit:cover;width:100%}
+@media (max-width:760px){.gearbar{display:none}.ring-info .wrap{grid-template-columns:1fr;gap:10px}.ri-n{display:none}.ring-head{top:86px}.gearbar button{width:36px;height:36px;font-size:17px}.ring-head .h2{font-size:40px}}
+
+/* AI Ride */
+.ai{border-top:1px solid var(--line)}
+.ai-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:80px}
+.ai-head .h2{font-size:clamp(84px,13vw,220px)}
+.ai-head .intro{font-size:clamp(19px,1.7vw,25px);line-height:1.38;margin:0;max-width:24em}
+.camp{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto auto;gap:22px;align-items:start}
+.camp-t{grid-column:1;grid-row:1/3;position:sticky;top:110px}
+.camp-t h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,4.4vw,72px);line-height:.88;margin:0 0 8px}
+.camp-t .sub{color:var(--muted)}
+.camp-t>p:last-child{margin-top:22px;max-width:26em}
+.shot{border:0;padding:0;background:none;text-align:left;cursor:pointer;position:relative;display:block;width:100%;overflow:hidden;perspective:1000px}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;color:#F2E9D9;background:linear-gradient(transparent,rgba(20,15,11,.82));font-size:14px;line-height:1.4;transform:translateY(30%);opacity:0;transition:.45s cubic-bezier(.2,.8,.2,1)}
+.shot .cap b{display:block;font-family:var(--display);font-weight:900;font-size:26px;text-transform:uppercase;line-height:1;margin-bottom:4px}
+.shot:hover .cap,.shot:focus-visible .cap{transform:none;opacity:1}
+.s1{grid-column:2;grid-row:1/3;aspect-ratio:1122/1402}
+.s2{grid-column:3;grid-row:1;aspect-ratio:1448/1086}
+.s3{grid-column:3;grid-row:2;aspect-ratio:1448/1086}
+@media (hover:none){.shot .cap{transform:none;opacity:1}}
+.photo{margin-top:140px}
+.photo-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:end;margin-bottom:44px}
+.photo-head h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,7vw,112px);line-height:.85;margin:0}
+.photo-head p{margin:0;font-size:18px;max-width:28em;color:var(--muted)}
+.pgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px}
+.ph{margin:0;position:relative}
+.ph:nth-child(1){grid-column:1/6}
+.ph:nth-child(2){grid-column:6/10;margin-top:90px}
+.ph:nth-child(3){grid-column:10/13;margin-top:30px}
+.ph:nth-child(4){grid-column:2/7}
+.ph:nth-child(5){grid-column:7/12;margin-top:-60px}
+.ph .fr{position:relative;background:#fff;overflow:hidden;cursor:zoom-in}
+.ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.ph .badge{position:absolute;left:12px;top:12px;background:var(--orange);color:var(--on-orange);font-weight:700;font-size:12px;padding:5px 9px}
+.ph figcaption{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding-top:12px}
+.ph figcaption b{font-family:var(--display);font-weight:900;font-size:26px;text-transform:uppercase;line-height:1}
+.ph figcaption span{grid-column:1/-1;color:var(--muted);font-size:14.5px}
+.ph figcaption em{font-style:normal;font-family:var(--display);font-weight:800;color:var(--orange-ink);font-size:20px;line-height:1.1}
+.loupe{position:fixed;left:0;top:0;z-index:65;width:220px;height:220px;margin:-110px 0 0 -110px;border-radius:50%;border:4px solid var(--orange);background-repeat:no-repeat;background-color:#fff;pointer-events:none;opacity:0;transform:scale(.6);transition:opacity .2s,transform .25s;box-shadow:0 24px 50px -16px rgba(26,20,16,.5)}
+.loupe.on{opacity:1;transform:scale(1)}
+#lb{width:min(1200px,96vw);height:auto;max-height:94svh;background:var(--paper);padding:0}
+.lb{margin:0;display:flex;flex-direction:column}
+.lb img{max-height:82svh;width:100%;object-fit:contain;background:var(--paper-2)}
+.lb figcaption{padding:14px 70px 18px 20px;font-size:15px;color:var(--muted)}
+.lb figcaption b{color:var(--ink);font-family:var(--display);font-weight:900;font-size:24px;text-transform:uppercase;margin-right:10px}
+@media (max-width:900px){.ai-head,.photo-head{grid-template-columns:1fr;gap:20px}.camp{grid-template-columns:1fr;}.camp-t,.s1,.s2,.s3{grid-column:1;grid-row:auto;position:relative;top:0}.pgrid{grid-template-columns:1fr 1fr;gap:14px}.ph:nth-child(n){grid-column:auto;margin-top:0}.ph:nth-child(5){grid-column:1/-1}.loupe{display:none}}
+
+/* about */
+.about{background:var(--paper-3)}
+.about-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:start}
+.portrait{position:sticky;top:100px}
+.portrait .frame{position:relative;overflow:hidden}
+.portrait img{width:100%;aspect-ratio:2/3;object-fit:cover;transform:scale(1.08);will-change:transform}
+.portrait .frame::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--orange)}
+.portrait .tag{position:absolute;right:-14px;top:30px;background:var(--orange);color:var(--on-orange);font-family:var(--display);font-weight:900;font-size:22px;text-transform:uppercase;padding:8px 14px;transform:rotate(4deg)}
+.about h2+p{font-size:clamp(22px,2vw,30px);line-height:1.28;margin:26px 0 22px;max-width:21em;font-weight:500}
+.about p{max-width:40em}
+.facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin:36px 0 0}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:13px;color:var(--muted)}
+.facts dd{margin:0;font-weight:700}
+.cv{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:130px}
+.tl{list-style:none;padding:0;margin:20px 0 0}
+.tl li{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line);transition:background .25s,padding .25s}
+.tl li:hover{background:var(--paper-2);padding-left:12px}
+.tl time{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.15;color:var(--orange-ink)}
+.tl b{display:block;font-size:17px;line-height:1.35}
+.tl span{color:var(--muted);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:120px}
+.skills h3{font-family:var(--display);font-weight:900;font-size:30px;text-transform:uppercase;margin:0 0 12px;padding-bottom:10px;border-bottom:4px solid var(--orange)}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:8px 0;border-bottom:1px solid var(--line)}
+.tools{margin-top:80px}
+.tools ul{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 44px}
+.tools li{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center}
+.tools .lv{font-size:14px;color:var(--muted)}
+.bars{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.bars i{height:12px;background:var(--line);transform-origin:left;transform:scaleX(0);transition:transform .5s}
+.bars.go i{transform:none}
+.bars i.f{background:var(--ink)}
+.bars i.r{background:var(--orange)}
+@media (max-width:900px){.about-grid,.cv{grid-template-columns:1fr;gap:44px}.portrait{position:relative;top:0}.skills{grid-template-columns:1fr 1fr}.tools ul{grid-template-columns:1fr}.tl li{grid-template-columns:1fr;gap:4px}}
+
+/* dialog */
+dialog{border:0;padding:0;margin:auto;width:min(1260px,100vw);max-width:100vw;height:min(92svh,1000px);max-height:100svh;background:var(--paper);color:var(--ink)}
+dialog[open]{animation:dIn .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes dIn{from{clip-path:inset(50% 0 50% 0)}to{clip-path:inset(0)}}
+dialog::backdrop{background:rgba(26,20,16,.75);backdrop-filter:blur(6px)}
+.dlg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);height:100%}
+.dlg-text{overflow:auto;padding:60px 52px 48px}
+.dlg-media{overflow:auto;background:var(--paper-2);padding:24px;display:flex;flex-direction:column;gap:16px}
+.dlg-media img{width:100%;height:auto}
+.dlg h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,5vw,78px);line-height:.86;margin:0 0 10px}
+.dlg .sub{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:12px;border:1px solid var(--line);padding:3px 8px}
+.dlg h3{font-family:var(--display);font-weight:900;font-size:28px;text-transform:uppercase;color:var(--orange-ink);margin:36px 0 10px}
+.dlg .prob{font-size:18px;line-height:1.5}
+.dec{border-top:1px solid var(--line);padding:14px 0}
+.dec b{display:block;margin-bottom:4px}
+.dec p{margin:0;color:var(--muted);font-size:15.5px}
+.time{font-family:var(--display);font-weight:900;font-size:120px;line-height:.85;color:var(--orange);margin-top:30px}
+.time+small{color:var(--muted)}
+.watch{margin-top:28px}
+.watch a{font-weight:700;text-decoration:none;border-bottom:3px solid var(--orange);word-break:break-all}
+.close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:3;width:48px;height:48px;border:0;background:var(--ink);color:var(--paper);font-size:24px;cursor:pointer;line-height:1}
+.close:hover{background:var(--orange);color:var(--on-orange)}
+.dlg-nav{display:flex;gap:10px;margin-top:40px}
+.dlg-nav button{font-weight:600;font-size:14px;border:1px solid var(--line);background:none;padding:11px 15px;cursor:pointer}
+.dlg-nav button:hover{border-color:var(--orange)}
+@media (max-width:900px){dialog{height:100svh;width:100vw}.dlg{display:block;overflow:auto}.dlg-text{overflow:visible;padding:70px 22px 24px}.dlg-media{overflow:visible;padding:16px}}
+
+/* contact */
+.contact{background:var(--orange);color:var(--on-orange);padding:140px 0 50px;position:relative;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:center}
+.contact .q{font-size:clamp(19px,1.7vw,24px);margin:0 0 14px;font-weight:500}
+.mail{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,7.4vw,124px);line-height:.9;text-decoration:none;display:inline-block;word-break:break-all;position:relative}
+.mail::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:8px;background:var(--on-orange);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mail:hover::after{transform:scaleX(.15)}
+.call{font-size:20px;margin:30px 0 46px}
+.call a{font-weight:700;text-decoration:none;border-bottom:3px solid var(--on-orange)}
+.links{display:flex;flex-wrap:wrap;gap:20px 54px}
+.links a{text-decoration:none}
+.links b{display:block;font-size:17px}
+.links span{font-size:14px;opacity:.78}
+.links a:hover span{opacity:1;text-decoration:underline}
+#bigGauge{width:100%;max-width:440px;margin-inline:auto;display:block;overflow:visible}
+.redline{font-family:var(--display);font-weight:900;font-size:30px;text-transform:uppercase;text-align:center;margin:12px 0 0}
+.foot{display:flex;justify-content:space-between;gap:20px;border-top:1.5px solid rgba(26,20,16,.3);margin-top:110px;padding-top:20px;font-size:13px}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
+<div id="loader" aria-hidden="true"><div class="in"><svg viewBox="0 0 240 200" id="loadGauge"></svg><div class="lv" id="loadRpm">0</div><div class="ll">RPM WHEEL, warming up the engine</div></div></div>
+<div class="cur" aria-hidden="true"><span>Open</span></div><div class="cur-dot" aria-hidden="true"></div>
+<div class="peek" aria-hidden="true"><img alt=""></div>
 
-<header class="wrap top">
-  <a class="mark" href="#home" aria-label="RPM Wheel, home"><svg class="logo" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="5.2"><path d="M9.46 30.96A14.5 14.5 0 0 1 6.76 26.92" stroke="#165CE8"/><path d="M6.45 26.17A14.5 14.5 0 0 1 5.51 21.40" stroke="#169DE8"/><path d="M5.51 20.60A14.5 14.5 0 0 1 6.45 15.83" stroke="#16DEE8"/><path d="M6.76 15.08A14.5 14.5 0 0 1 9.46 11.04" stroke="#16E8B0"/><path d="M10.04 10.46A14.5 14.5 0 0 1 14.08 7.76" stroke="#16E86F"/><path d="M14.83 7.45A14.5 14.5 0 0 1 19.60 6.51" stroke="#16E82E"/><path d="M20.40 6.51A14.5 14.5 0 0 1 25.17 7.45" stroke="#40E816"/><path d="M25.92 7.76A14.5 14.5 0 0 1 29.96 10.46" stroke="#81E816"/><path d="M30.54 11.04A14.5 14.5 0 0 1 33.24 15.08" stroke="#C2E816"/><path d="M33.55 15.83A14.5 14.5 0 0 1 34.49 20.60" stroke="#E8CD16"/><path d="M34.49 21.40A14.5 14.5 0 0 1 33.55 26.17" stroke="#FF5A1F"/><path d="M33.24 26.92A14.5 14.5 0 0 1 30.54 30.96" stroke="#FF5A1F"/><line x1="20" y1="21" x2="25.89" y2="11.71" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="21" r="3.2" fill="var(--bg,#000)" stroke="currentColor" stroke-width="2"/></svg>RPM WHEEL</a>
-  <nav aria-label="Main">
-    <a href="#work" data-nav="home">Work</a><a href="#about-me">About me</a><a href="#contact" data-nav="home">Contact</a>
-  </nav>
-  <div class="top-r">
-    <span class="status">Booking projects from Now</span>
-    <div class="theme" role="group" aria-label="Color theme">
-      <button type="button" data-set-theme="dark" aria-pressed="true" aria-label="Black and orange theme"><i class="sw sw-dark" aria-hidden="true"></i><span>Black</span></button>
-      <button type="button" data-set-theme="light" aria-pressed="false" aria-label="Beige and orange theme"><i class="sw sw-light" aria-hidden="true"></i><span>Beige</span></button>
-    </div>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#work" aria-label="RPM Wheel, back to top">
+      <svg viewBox="0 0 100 100" id="logoGauge" aria-hidden="true"></svg>
+      <span>RPM WHEEL</span>
+    </a>
+    <nav class="gears" aria-label="Gears">
+      <a href="#about" data-g="N">N</a>
+      <a href="#work" data-g="1">1</a><a href="#work" data-g="2">2</a><a href="#work" data-g="3">3</a>
+      <a href="#work" data-g="4">4</a><a href="#work" data-g="5">5</a><a href="#work" data-g="6">6</a><a href="#ai" data-g="AI">AI</a>
+    </nav>
+    <div class="tacho" aria-hidden="true"><span id="rpm">1,300</span><small>r/min</small></div>
   </div>
 </header>
 
-<main id="home">
-  <!-- HERO -->
-  <section class="wrap hero" data-gear="N" aria-label="Intro">
-    <div>
-      <p class="role">Art director, graphic and motion designer. Rider.</p>
-      <h1>Yasser<br>Ajana</h1>
-      <p class="lede">Brand systems, campaigns and edits with the same thing I look for in a good road: rhythm, control and a bit of speed.</p>
-      <div class="intro">
-        <p><strong>5 years</strong> in design, video editing and motion.<br>26 years old, based in Tangier, Morocco.</p>
+<main>
+  <section class="ring" id="work">
+    <div class="ring-stick">
+      <h1 class="intro-name" id="introName"><span>Yasser</span><span class="b">Ajana</span></h1>
+      <canvas id="ring" aria-label="3D showroom of projects. Scroll or drag to browse."></canvas>
+      <div class="hello" id="intro">
+        <div class="intro-top"><div class="booking"><i></i>Booking projects from now</div><p class="role">Art director, graphic and motion designer. Rider.</p></div>
+        <div class="intro-bot">
+          <p class="lede">Brand systems, campaigns and edits with the same thing I look for in a good road: rhythm, control and a bit of speed.</p>
+          <div class="meta"><div class="big">5 years</div><p>in design, video editing and motion.<br><b>26 years old, based in Tangier, Morocco.</b></p></div>
+        </div>
+        <div class="cue" aria-hidden="true"><i></i>Scroll to ride through the work</div>
       </div>
-      <div class="ctas">
-        <a class="btn primary" id="rev" href="#brand">See the work</a>
-        <a class="btn" href="#contact">Start a project</a>
-      </div>
+      <div class="ring-head"><div class="wrap"><h2 class="h2">The<br>showroom</h2><div class="gearbar" id="gearbar" role="group" aria-label="Jump to gear"></div></div></div>
+      <div class="ring-info"><div class="wrap">
+        <div class="ri-n" id="riN">1</div>
+        <div class="ri-t"><div class="gt" id="riG"></div><h3 id="riT"></h3><div class="sub" id="riS"></div><div class="ticks" id="ticks"></div></div>
+        <div><div class="ri-act"><button class="ar" id="riPrev" type="button" aria-label="Previous project">‹</button><button class="ar" id="riNext" type="button" aria-label="Next project">›</button><button class="open" id="riOpen" type="button">Open case</button></div><div class="ri-count" id="riC"></div></div>
+      </div></div>
     </div>
-    <div class="hero-visual">
-      <figure class="ph hero-photo" style="--r:2/3" data-label="">
-        <img id="profileImg" fetchpriority="high" width="1000" height="1500" src="assets/img/yasser-hero.jpg" alt="Yasser Ajana standing beside his motorcycle at night in Tangier">
-      </figure>
-      <div class="tach-wrap" aria-hidden="true">
-        <svg id="tach" viewBox="0 0 400 360"><path class="t-track" d="M81.20606076066001 318.79393923934 A168 168 0 1 1 318.79393923934 318.79393923934"/><path class="t-red" d="M364 200 A164 164 0 0 1 315.9655121145938 315.96551211459376"/><line class="t-maj" x1="89.69134213489858" y1="310.3086578651014" x2="103.83347775862953" y2="296.16652224137044"/><text class="t-num" x="119.38982694473357" y="280.6101730552664">0</text><line class="t-min" x1="70.29074048080295" y1="286.66895635105794" x2="78.60543660382841" y2="281.1132540208619"/><line class="t-maj" x1="55.87479292823926" y1="259.698615448954" x2="74.35238357846501" y2="252.0449468016522"/><text class="t-num" x="94.67773329371332" y="243.62591128962023">1</text><line class="t-min" x1="46.99749625709603" y1="230.43409023451596" x2="56.80534906112834" y2="228.48318701435468"/><line class="t-maj" x1="44" y1="200" x2="64" y2="200"/><text class="t-num" x="86" y="200">2</text><line class="t-min" x1="46.99749625709606" y1="169.56590976548398" x2="56.80534906112837" y2="171.51681298564526"/><line class="t-maj" x1="55.87479292823926" y1="140.301384551046" x2="74.35238357846501" y2="147.9550531983478"/><text class="t-num" x="94.67773329371332" y="156.37408871037977">3</text><line class="t-min" x1="70.29074048080295" y1="113.33104364894204" x2="78.6054366038284" y2="118.88674597913807"/><line class="t-maj" x1="89.69134213489859" y1="89.69134213489858" x2="103.83347775862954" y2="103.83347775862953"/><text class="t-num" x="119.38982694473358" y="119.38982694473357">4</text><line class="t-min" x1="113.33104364894206" y1="70.29074048080295" x2="118.88674597913808" y2="78.6054366038284"/><line class="t-maj" x1="140.301384551046" y1="55.87479292823926" x2="147.9550531983478" y2="74.35238357846501"/><text class="t-num" x="156.37408871037977" y="94.67773329371332">5</text><line class="t-min" x1="169.56590976548398" y1="46.99749625709606" x2="171.5168129856453" y2="56.80534906112837"/><line class="t-maj" x1="200" y1="44" x2="200" y2="64"/><text class="t-num" x="200" y="86">6</text><line class="t-min" x1="230.43409023451602" y1="46.99749625709606" x2="228.4831870143547" y2="56.80534906112837"/><line class="t-maj" x1="259.698615448954" y1="55.87479292823926" x2="252.0449468016522" y2="74.35238357846501"/><text class="t-num" x="243.62591128962023" y="94.67773329371332">7</text><line class="t-min" x1="286.66895635105794" y1="70.29074048080295" x2="281.1132540208619" y2="78.6054366038284"/><line class="t-maj" x1="310.3086578651014" y1="89.69134213489858" x2="296.16652224137044" y2="103.83347775862953"/><text class="t-num" x="280.6101730552664" y="119.38982694473357">8</text><line class="t-min" x1="329.7092595191971" y1="113.33104364894204" x2="321.39456339617163" y2="118.88674597913807"/><line class="t-maj" x1="344.12520707176077" y1="140.301384551046" x2="325.64761642153496" y2="147.9550531983478"/><text class="t-num" x="305.32226670628665" y="156.37408871037977">9</text><line class="t-min" x1="353.00250374290397" y1="169.56590976548398" x2="343.19465093887163" y2="171.51681298564526"/><line class="t-maj red" x1="356" y1="200" x2="336" y2="200"/><text class="t-num red" x="314" y="200">10</text><line class="t-min red" x1="353.00250374290397" y1="230.43409023451596" x2="343.19465093887163" y2="228.48318701435468"/><line class="t-maj red" x1="344.12520707176077" y1="259.698615448954" x2="325.64761642153496" y2="252.0449468016522"/><text class="t-num red" x="305.32226670628665" y="243.62591128962023">11</text><line class="t-min red" x1="329.7092595191971" y1="286.66895635105794" x2="321.3945633961716" y2="281.1132540208619"/><line class="t-maj red" x1="310.3086578651014" y1="310.3086578651014" x2="296.16652224137044" y2="296.16652224137044"/><text class="t-num red" x="280.61017305526644" y="280.6101730552664">12</text><text class="t-rpm" id="rpm" x="200" y="300">0</text><text class="t-unit" x="200" y="322">r/min</text><g id="needle"><line class="t-needle" x1="200" y1="222" x2="200" y2="52"/></g><circle class="t-hub" cx="200" cy="200" r="13"/></svg>
+    <div class="wrap ring-fallback" id="ringFallback"></div>
+  </section>
+
+  <div class="marq" aria-hidden="true"><div id="marq"></div></div>
+
+  <section class="wrap sec" id="index">
+    <div class="contents">
+      <div class="reveal">
+        <h2 class="h2">The work</h2>
+        <p class="intro">Six gears, from identity to motion. Each project shows the problem it had to solve and the decisions behind the result.</p>
       </div>
+      <ul class="idx reveal" id="idx"></ul>
     </div>
   </section>
 
-  <!-- GEAR BAR / CATEGORY NAV -->
-  <div class="gearbar" id="work">
+  <section class="ai sec" id="ai">
     <div class="wrap">
-      <div class="gear-now"><b id="gearNow">N</b><span>current<br>gear</span></div>
-      <ol id="gearLinks">
-        <li><a href="#brand" data-g="1"><em>1</em>Brand identity</a></li>
-        <li><a href="#social" data-g="2"><em>2</em>Social posts</a></li>
-        <li><a href="#manip" data-g="3"><em>3</em>Manipulation</a></li>
-        <li><a href="#print" data-g="4"><em>4</em>Print and packaging</a></li>
-        <li><a href="#ads" data-g="5"><em>5</em>Paid ads</a></li>
-        <li><a href="#motion" data-g="6"><em>6</em>Motion and video</a></li>
-        <li><a href="#about-me" data-g="N"><em>N</em>About me</a></li>
-      </ol>
-    </div>
-  </div>
+      <div class="ai-head reveal">
+        <div><p class="k">AI visual creation</p><h2 class="h2">AI Ride</h2></div>
+        <p class="intro">Campaign visuals and photography made with AI, directed like a real shoot: the concept, the light, the wardrobe in brand colors, and the small details that make an image believable.</p>
+      </div>
 
-  <!-- 1 BRAND -->
-  <section class="wrap cat" id="brand" data-gear="1">
-    <div class="cat-head">
-      <span class="g" aria-hidden="true">1</span>
-      <div><h2>Brand and visual identity</h2><p>Identity systems built from one idea, then tested on every surface the client will actually use.</p></div>
-      <span class="count" data-count="brand">1 project</span>
-    </div>
-    <div class="board"><div class="strip stack-sm"><div style="--a:1.2552"><button class="card tile" type="button" data-p="modern-smile" data-k="0" aria-label="Open Modern Smile case study"><div class="ph has-media" style="--r:787/627"><img src="assets/work/ms-logo.png" alt="Modern Smile logo: a tooth-shaped mark in turquoise above the wordmark" width="787" height="627" loading="lazy" decoding="async"></div></button></div><div style="--a:0.7416"><button class="card tile" type="button" data-p="modern-smile" data-k="1" aria-label="Open Modern Smile case study"><div class="ph has-media" style="--r:465/627"><img src="assets/work/ms-concept.png" alt="Concept panel explaining the M, the smile, the protection and the continuity in the mark" width="465" height="627" loading="lazy" decoding="async"></div></button></div></div><div class="strip stack-sm"><div style="--a:1.2149"><button class="card tile" type="button" data-p="modern-smile" data-k="2" aria-label="Open Modern Smile case study"><div class="ph has-media" style="--r:458/377"><img src="assets/work/ms-cards.png" alt="Modern Smile business cards, turquoise front and white back" width="458" height="377" loading="lazy" decoding="async"></div></button></div><div style="--a:0.9204"><button class="card tile" type="button" data-p="modern-smile" data-k="3" aria-label="Open Modern Smile case study"><div class="ph has-media" style="--r:347/377"><img src="assets/work/ms-wall.png" alt="Modern Smile logo as a raised white sign on a mint reception wall" width="347" height="377" loading="lazy" decoding="async"></div></button></div><div style="--a:1.1565"><button class="card tile" type="button" data-p="modern-smile" data-k="4" aria-label="Open Modern Smile case study"><div class="ph has-media" style="--r:436/377"><img src="assets/work/ms-stationery.png" alt="Modern Smile envelope and letterhead" width="436" height="377" loading="lazy" decoding="async"></div></button></div></div><div class="strip stack-sm"><div style="--a:5.0976"><button class="card tile" type="button" data-p="modern-smile" data-k="5" aria-label="Open Modern Smile case study"><div class="ph has-media" style="--r:1254/246"><img src="assets/work/ms-palette.png" alt="Color palette and Hanken Grotesk typography for Modern Smile" width="1254" height="246" loading="lazy" decoding="async"></div></button></div></div><div class="meta"><div><h3>Modern Smile</h3><p>Dental cabinet</p><p class="short">Identity for a new dental cabinet that had to calm patients before it impressed them.</p><div class="tags"><span>Logo</span><span>Brand system</span><span>Stationery</span><span>Signage</span></div><button class="readcase" type="button" data-p="modern-smile" data-k="0">Read the case study</button></div></div></div>
-  </section>
+      <div class="camp">
+        <div class="camp-t reveal">
+          <p class="k">Campaign</p>
+          <h3>Now in the US</h3>
+          <p class="sub">Belocum, US launch</p>
+          <div class="tags"><span>AI visual</span><span>Compositing</span><span>Launch campaign</span></div>
+          <p>Belocum is crossing the border, and the launch needed one image that says it before anyone reads a word. So the most American figure there is put on Belocum navy scrubs and picked up the app.</p>
+        </div>
+        <button class="shot s1 reveal" type="button" data-lb="ai1" data-cur="View"><img src="assets/img/ai1.jpg" alt="Statue of Liberty in Belocum navy scrubs holding a phone at sunset, with the Now in the US headline"><span class="cap"><b>Now in the US</b>Liberty in navy scrubs with lime piping, phone in hand, the sun setting behind the skyline.</span></button>
+        <button class="shot s2 reveal" type="button" data-lb="ai3" data-cur="View"><img src="assets/img/ai3.jpg" alt="Over-the-shoulder view of the Statue of Liberty in a teal scrub cap looking at the Belocum app" loading="lazy"><span class="cap"><b>Liberty on shift</b>Over the shoulder: a teal scrub cap under the crown and the Belocum app on screen, Manhattan behind.</span></button>
+        <button class="shot s3 reveal" type="button" data-lb="ai2" data-cur="View"><img src="assets/img/ai2.jpg" alt="A dental chair inside a snow globe in Times Square, framed between a professional's legs" loading="lazy"><span class="cap"><b>Times Square snow globe</b>A dental chair sealed in a snow globe, framed low between a professional’s legs, the crew in teal and lime.</span></button>
+      </div>
 
-  <!-- 2 SOCIAL -->
-  <section class="wrap cat" id="social" data-gear="2">
-    <div class="cat-head">
-      <span class="g" aria-hidden="true">2</span>
-      <div><h2>Social posts</h2><p>Posts that get half a second to stop the thumb, then say one thing clearly.</p></div>
-      <span class="count" data-count="social">3 projects</span>
-    </div>
-    <div class="grid"><div class="s-4"><button class="card tile" type="button" data-p="shaolin" data-k="0" aria-label="Open Shaolin on the pitch case study"><div class="ph has-media" style="--r:12/13"><img src="assets/work/social-monk.jpg" alt="Shaolin monk mid-kick on a football pitch with a temple behind the stadium" width="709" height="709" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Shaolin on the pitch</h3><p>Concept post</p><p class="short">Two worlds that should never share a frame, built to stop the scroll.</p><div class="tags"><span>Compositing</span><span>Social post</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="car-rental" data-k="0" aria-label="Open Best car for rent today case study"><div class="ph has-media" style="--r:12/13"><img src="assets/work/social-car-rental.jpg" alt="Jeep on a wet forest road bursting through an orange frame, headline Best car for rent today" width="633" height="680" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Best car for rent today</h3><p>Car rental agency</p><p class="short">A rental post that sells the trip, not just the vehicle.</p><div class="tags"><span>Social post</span><span>Compositing</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="nike" data-k="0" aria-label="Open Nike running post case study"><div class="ph has-media" style="--r:12/13"><img src="assets/work/social-nike.jpg" alt="Nike running shoe bursting through torn red paper over a large Nike wordmark" width="454" height="493" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Nike running post</h3><p>Spec work, not commissioned</p><p class="short">Selling speed with a shoe that isn’t moving.</p><div class="tags"><span>Spec work</span><span>Social post</span></div></div></div></div></div>
-  </section>
-
-  <!-- 3 MANIPULATION -->
-  <section class="wrap cat" id="manip" data-gear="3">
-    <div class="cat-head">
-      <span class="g" aria-hidden="true">3</span>
-      <div><h2>Manipulation and posters</h2><p>Composites and poster art. Light, perspective and color matched until nobody asks which parts were real.</p></div>
-      <span class="count" data-count="manip">3 projects</span>
-    </div>
-    <div class="grid"><div class="s-4"><button class="card tile" type="button" data-p="final-round" data-k="0" aria-label="Open The Final Round case study"><div class="ph has-media" style="--r:445/626"><img src="assets/work/poster-final-round.png" alt="The Final Round poster: two boxers in a hazy gym ring with a trophy between them" width="445" height="626" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>The Final Round</h3><p>Poster concept</p><p class="short">Two fighters, one trophy, the second before it’s decided.</p><div class="tags"><span>Poster</span><span>Compositing</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="signal" data-k="0" aria-label="Open Signal case study"><div class="ph has-media" style="--r:445/626"><img src="assets/work/poster-signal.png" alt="Hooded man walking toward the camera through a neon street with flying papers and fire" width="443" height="626" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Signal</h3><p>Personal poster</p><p class="short">A calm figure at the center of total chaos.</p><div class="tags"><span>Poster</span><span>Compositing</span><span>Color grading</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="spider-man" data-k="0" aria-label="Open Spider-Man: The Reveal case study"><div class="ph has-media" style="--r:445/626"><img src="assets/work/poster-spiderman.png" alt="Spider-Man hanging upside down in a red-lit city alley, title The Reveal" width="441" height="626" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Spider-Man: The Reveal</h3><p>Personal fan poster</p><p class="short">A fan poster built on suspense and a narrow city alley.</p><div class="tags"><span>Fan art</span><span>Poster</span><span>Compositing</span></div></div></div></div></div>
-  </section>
-
-  <!-- 4 PRINT AND PACKAGING -->
-  <section class="wrap cat" id="print" data-gear="4">
-    <div class="cat-head">
-      <span class="g" aria-hidden="true">4</span>
-      <div><h2>Print and packaging</h2><p>Flyers, gift cards and packaging, designed for how people hold, fold and pick them up.</p></div>
-      <span class="count" data-count="print">2 projects</span>
-    </div>
-    <article class="prow"><div class="meta"><div><h3>S&amp;S Beauty</h3><p>Hair and beauty salon</p><p class="short">Opening flyer and gift cards for a new hair and beauty salon.</p><div class="tags"><span>Flyer</span><span>Gift card</span><span>Print</span></div><button class="readcase" type="button" data-p="ss-beauty" data-k="0">Read the case study</button></div></div><div class="strip"><div style="--a:1.3333"><button class="card tile" type="button" data-p="ss-beauty" data-k="0" aria-label="Open S&amp;S Beauty case study"><div class="ph has-media" style="--r:1260/945"><img src="assets/work/ss-beauty-flyer.jpg" alt="S&amp;S Beauty bifold flyer with an opening promotion banner and price list" width="1260" height="945" loading="lazy" decoding="async"></div></button></div><div style="--a:1.4992"><button class="card tile" type="button" data-p="ss-beauty" data-k="1" aria-label="Open S&amp;S Beauty case study"><div class="ph has-media" style="--r:952/635"><img src="assets/work/ss-beauty-gift-cards.jpg" alt="Front and back of the S&amp;S Beauty gift card" width="952" height="635" loading="lazy" decoding="async"></div></button></div><div style="--a:1.5000"><button class="card tile" type="button" data-p="ss-beauty" data-k="2" aria-label="Open S&amp;S Beauty case study"><div class="ph has-media" style="--r:978/652"><img src="assets/work/ss-beauty-gift-card.jpg" alt="S&amp;S Beauty gift card with a gold bow" width="978" height="652" loading="lazy" decoding="async"></div></button></div></div></article><article class="prow"><div class="meta"><div><h3>Bio Rituel</h3><p>Moroccan skincare, sold in France</p><p class="short">Packaging that brings Moroccan tradition to a French shelf.</p><div class="tags"><span>Packaging</span><span>Label design</span></div><button class="readcase" type="button" data-p="bio-rituel" data-k="0">Read the case study</button></div></div><div class="strip"><div style="--a:0.6672"><button class="card tile" type="button" data-p="bio-rituel" data-k="0" aria-label="Open Bio Rituel case study"><div class="ph has-media" style="--r:421/631"><img src="assets/work/bio-rituel-bottle.jpg" alt="Bio Rituel rose water spray bottle in matte black with pink blossoms and zellige pattern" width="421" height="631" loading="lazy" decoding="async"></div></button></div><div style="--a:0.9232"><button class="card tile" type="button" data-p="bio-rituel" data-k="1" aria-label="Open Bio Rituel case study"><div class="ph has-media" style="--r:505/547"><img src="assets/work/bio-rituel-pouch.jpg" alt="Bio Rituel herbal body scrub pouch with Arabic and French text" width="505" height="547" loading="lazy" decoding="async"></div></button></div><div style="--a:1.3633"><button class="card tile" type="button" data-p="bio-rituel" data-k="2" aria-label="Open Bio Rituel case study"><div class="ph has-media" style="--r:773/567"><img src="assets/work/bio-rituel-sprays.jpg" alt="Two Bio Rituel spray bottles with pink triggers" width="773" height="567" loading="lazy" decoding="async"></div></button></div></div></article>
-  </section>
-
-  <!-- 5 PAID ADS -->
-  <section class="wrap cat" id="ads" data-gear="5">
-    <div class="cat-head">
-      <span class="g" aria-hidden="true">5</span>
-      <div><h2>Paid ads</h2><p>Belocum’s Q4 app campaign: five ads, one headline system. The 3D icons and the map were created from scratch to match the brand’s design style.</p></div>
-      <span class="count" data-count="ads">5 ads</span>
-    </div>
-    <div class="grid"><div class="s-6"><button class="card tile" type="button" data-p="ads-rating" data-k="0" aria-label="Open 4,6/5 on Google case study"><div class="ph has-media" style="--r:1/1"><img src="assets/work/ads-google-rating.jpg" alt="Belocum ad: 4,6/5 on Google. You can’t fake that. A phone shows the Google listing with five large lime stars lifted off the screen" width="1400" height="1400" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>4,6/5 on Google</h3><p>Belocum, Q4 app campaign</p><p class="short">A star rating that reads as evidence, not a boast.</p><div class="tags"><span>Paid ad</span><span>Social proof</span><span>UI mockup</span></div></div></div></div><div class="s-6"><button class="card tile" type="button" data-p="ads-downloads" data-k="0" aria-label="Open 34K+ Downloads case study"><div class="ph has-media" style="--r:1/1"><img src="assets/work/ads-downloads.jpg" alt="Belocum ad: 34K+ Downloads. That’s BeAwesome. A turquoise 3D download icon floats over a teal and lime gradient" width="1400" height="1400" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>34K+ Downloads</h3><p>Belocum, Q4 app campaign</p><p class="short">A download count turned into the campaign’s signature line.</p><div class="tags"><span>Paid ad</span><span>3D icon</span><span>Social proof</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="ads-per-diem" data-k="0" aria-label="Open A Paid Lunch? We Call It Per Diem. case study"><div class="ph has-media" style="--r:1/1"><img src="assets/work/ads-per-diem.jpg" alt="Belocum ad: A paid lunch? We call it per diem. An iPhone shows the Belocum Contracts screen with available shifts" width="1400" height="1400" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>A Paid Lunch? We Call It Per Diem.</h3><p>Belocum, Q4 app campaign</p><p class="short">A contract term translated into a benefit anyone wants.</p><div class="tags"><span>Paid ad</span><span>App screen</span><span>Benefit messaging</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="ads-commute" data-k="0" aria-label="Open Paid to Commute? We Call It Normal. case study"><div class="ph has-media" style="--r:1/1"><img src="assets/work/ads-commute.jpg" alt="Belocum ad: Paid to commute? We call it normal. A custom lime and navy 3D map with a glowing route between three location pins" width="1400" height="1400" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Paid to Commute? We Call It Normal.</h3><p>Belocum, Q4 app campaign</p><p class="short">Travel pay made visible with a map built for the brand.</p><div class="tags"><span>Paid ad</span><span>3D map</span><span>Benefit messaging</span></div></div></div></div><div class="s-4"><button class="card tile" type="button" data-p="ads-staffing" data-k="0" aria-label="Open Not Just a Staffing App. case study"><div class="ph has-media" style="--r:1/1"><img src="assets/work/ads-staffing.jpg" alt="Belocum ad: Not just a staffing app. Custom 3D icons of a person, a phone with contract cards and a clinic lock together like puzzle pieces" width="1400" height="1400" loading="lazy" decoding="async"></div></button><div class="meta"><div><h3>Not Just a Staffing App.</h3><p>Belocum, Q4 app campaign</p><p class="short">The whole platform explained in three pieces that lock together.</p><div class="tags"><span>Paid ad</span><span>3D icons</span><span>Brand positioning</span></div></div></div></div></div>
-  </section>
-
-  <!-- 6 MOTION -->
-  <section class="wrap cat" id="motion" data-gear="6">
-    <div class="cat-head">
-      <span class="g" aria-hidden="true">6</span>
-      <div><h2>Motion design and video editing</h2><p>Logo stings, kinetic type, product animation and ride edits cut to the sound of the engine.</p></div>
-      <span class="count" data-count="motion">4 projects</span>
-    </div>
-    <div class="motion-grid" id="grid-motion"><div class="m-solar"><figure class="vcard">
-    <div class="ph has-media vplayer" style="--r:16/9">
-      <img class="vloop" src="assets/video/solar-preview.webp" loading="lazy" decoding="async" alt="Solar panel ad, animated preview">
-      <video data-vid="solar" controls playsinline preload="metadata" poster="assets/video/solar-poster.jpg"><source src="assets/video/solar-panel-ad.mp4" type="video/mp4"><source src="assets/video/solar-panel-ad.webm" type="video/webm"></video>
-      <span class="dur">0:37</span>
-    </div>
-    <figcaption class="meta"><div><h3>Solar panel ad</h3><p>Solar installation offer, French market</p><div class="tags"><span>Video editing</span><span>Kinetic text</span><span>Lead generation ad</span></div></div></figcaption>
-  </figure></div><div class="m-aion"><figure class="vcard">
-    <div class="ph has-media vplayer" style="--r:16/9">
-      <img class="vloop" src="assets/video/aion-preview.webp" loading="lazy" decoding="async" alt="AionChat explainer, animated preview">
-      <video data-vid="aion" controls playsinline preload="metadata" poster="assets/video/aion-poster.jpg"><source src="assets/video/aion-explainer.mp4" type="video/mp4"><source src="assets/video/aion-explainer.webm" type="video/webm"></video>
-      <span class="dur">2:06</span>
-    </div>
-    <figcaption class="meta"><div><h3>AionChat explainer</h3><p>AION</p><div class="tags"><span>2D animation</span><span>Explainer</span></div></div><span class="yr">2025</span></figcaption>
-  </figure></div><div class="m-umo"><figure class="vcard">
-    <div class="ph has-media vplayer" style="--r:16/9">
-      <img class="vloop" src="assets/video/umo-preview.webp" loading="lazy" decoding="async" alt="Umo detergent ad, animated preview">
-      <video data-vid="umo" controls playsinline preload="metadata" poster="assets/video/umo-poster.jpg"><source src="assets/video/umo-ad.mp4" type="video/mp4"><source src="assets/video/umo-ad.webm" type="video/webm"></video>
-      <span class="dur">0:36</span>
-    </div>
-    <figcaption class="meta"><div><h3>Umo detergent ad</h3><p>Umo</p><div class="tags"><span>2D animation</span><span>Product ad</span></div></div><span class="yr">2025</span></figcaption>
-  </figure></div><div class="m-belocum"><figure class="vcard">
-    <div class="ph has-media vplayer" style="--r:9/16">
-      <img class="vloop" src="assets/video/belocum-preview.webp" loading="lazy" decoding="async" alt="Belocum UI motion video, animated preview">
-      <video data-vid="belocum" controls playsinline preload="metadata" poster="assets/video/belocum-poster.jpg"><source src="assets/video/belocum-ui.mp4" type="video/mp4"><source src="assets/video/belocum-ui.webm" type="video/webm"></video>
-      <span class="dur">0:35</span>
-    </div>
-    <figcaption class="meta"><div><h3>Belocum UI motion video</h3><p>Belocum app</p><div class="tags"><span>UI animation</span><span>App promo</span></div></div><span class="yr">2026</span></figcaption>
-  </figure></div></div>
-  </section>
-
-  <!-- ABOUT ME: personal info, experience, education, skills -->
-  <div id="about-me" class="about-block" data-gear="N">
-  <section class="wrap ab-hero">
-    <div>
-      <h2 class="ab-title">About me</h2>
-      <p class="lede">Senior graphic designer, motion designer and art director. I build brands that move, on screen and on two wheels.</p>
-      <p>Since June 2026 I'm a Graphic Designer and Motion Designer at Belocum, where I design and animate the app's brand and interface content. Before that I spent four years as an Engineer in Graphic Design at Alten Morocco, worked with agencies like 212 Communication, and have freelanced for my own clients since 2019. I like owning a project end to end: the strategy, the look, the animation and the final edit.</p>
-      <p>Off the clock I ride. Long solo trips taught me to plan the route, respect the conditions and commit to the line, and that's the way I run every brief.</p>
-      <dl class="spec">
-        <div><dt>Age</dt><dd>26 years old</dd></div>
-        <div><dt>Based in</dt><dd>Tangier, Morocco</dd></div>
-        <div><dt>Current role</dt><dd>Graphic Designer and Motion Designer at Belocum</dd></div>
-        <div><dt>Current bike</dt><dd>Kawasaki Z300</dd></div>
-      </dl>
-      <div class="ctas" style="margin-top:28px">
-        <a class="btn primary" href="#contact">Start a project</a>
+      <div class="photo">
+        <div class="photo-head reveal">
+          <h3>AI photography</h3>
+          <p>Studio portraits of dental and pharmacy professionals. Every face here is generated. Hover to inspect the skin, the fabric and the light, then decide how real it looks.</p>
+        </div>
+        <div class="pgrid" id="pgrid"></div>
       </div>
     </div>
-    <div class="ph" style="--r:4/5" data-label="">
-      <img data-profile loading="lazy" decoding="async" src="assets/img/yasser-about.jpg" alt="Yasser Ajana in his helmet leaning on his motorcycle">
+  </section>
+
+  <section class="about sec" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="portrait">
+          <div class="frame"><img id="portraitImg" src="assets/img/003.jpg" alt="Yasser in his helmet, leaning on his Kawasaki Z300 at night" loading="lazy"></div>
+          <div class="tag">Rider</div>
+        </div>
+        <div>
+          <h2 class="h2 reveal">About me</h2>
+          <p class="reveal">Senior graphic designer, motion designer and art director. I build brands that move, on screen and on two wheels.</p>
+          <p class="reveal">Since June 2026 I’m a Graphic Designer and Motion Designer at Belocum, where I design and animate the app’s brand and interface content. Before that I spent four years as an Engineer in Graphic Design at Alten Morocco, worked with agencies like 212 Communication, and have freelanced for my own clients since 2019. I like owning a project end to end: the strategy, the look, the animation and the final edit.</p>
+          <p class="reveal">Off the clock I ride. Long solo trips taught me to plan the route, respect the conditions and commit to the line, and that’s the way I run every brief.</p>
+          <dl class="facts reveal">
+            <div><dt>Age</dt><dd>26 years old</dd></div>
+            <div><dt>Based in</dt><dd>Tangier, Morocco</dd></div>
+            <div><dt>Current role</dt><dd>Graphic Designer and Motion Designer at Belocum</dd></div>
+            <div><dt>Current bike</dt><dd>Kawasaki Z300</dd></div>
+          </dl>
+          </figure>
+        </div>
+      </div>
+
+      <div class="cv">
+        <div class="reveal">
+          <p class="k">Experience</p>
+          <ol class="tl">
+            <li><time>Jun 2026 – Now</time><div><b>Graphic Designer and Motion Designer</b><span>Belocum</span></div></li>
+            <li><time>Feb 2022 – May 2026</time><div><b>Engineer in Graphic Design</b><span>Alten Morocco</span></div></li>
+            <li><time>2019 – Now</time><div><b>Freelance Motion Designer, Video Editor and Graphic Designer</b><span>Self-employed</span></div></li>
+            <li><time>May 2021 – Jul 2021</time><div><b>Graphic Designer and Video Editor</b><span>212 Communication</span></div></li>
+          </ol>
+        </div>
+        <div class="reveal">
+          <p class="k">Education</p>
+          <ol class="tl">
+            <li><time>2024 – 2026</time><div><b>Master’s Degree in Graphic Design and Media Processing</b><span>Institut Tangérois de Gestion</span></div></li>
+            <li><time>2023 – 2024</time><div><b>Professional Bachelor’s Degree in Graphic Design and Media Processing</b><span>Institut Tangérois de Gestion</span></div></li>
+            <li><time>2019 – 2021</time><div><b>Diploma in Multimedia Development</b><span>Soft Institute</span></div></li>
+            <li><time>2016 – 2019</time><div><b>Literature Baccalauréat Diploma</b><span>Cady Ayad High School</span></div></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="skills reveal">
+        <div><h3>Design</h3><ul><li>Brand and visual identity</li><li>Logo and type systems</li><li>Social media design</li><li>Print and packaging</li><li>Layout and editorial</li></ul></div>
+        <div><h3>Art direction</h3><ul><li>Campaign concepts</li><li>Paid ads creative strategy</li><li>Photo and video direction</li><li>Team leadership</li><li>Client presentation</li></ul></div>
+        <div><h3>Motion and video</h3><ul><li>2D motion design</li><li>Kinetic typography</li><li>Video editing</li><li>Color grading and sound</li></ul></div>
+        <div><h3>Image</h3><ul><li>Photo manipulation</li><li>Compositing</li><li>High-end retouching</li><li>Matte painting</li><li>Photography</li></ul></div>
+      </div>
+
+      <div class="tools reveal">
+        <p class="k">Tools and skills</p>
+        <ul id="tools"></ul>
+      </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="wrap ab-sec">
-    <h2 class="ab-h">Experience</h2>
-    <ol class="timeline" id="expList">
-      <li class="now"><div class="when">Jun 2026 – Now</div><div><h3>Graphic Designer and Motion Designer</h3><div class="where">Belocum</div></div></li>
-      <li><div class="when">Feb 2022 – May 2026</div><div><h3>Engineer in Graphic Design</h3><div class="where">Alten Morocco</div></div></li>
-      <li class="now"><div class="when">2019 – Now</div><div><h3>Freelance Motion Designer, Video Editor and Graphic Designer</h3><div class="where">Self-employed</div></div></li>
-      <li><div class="when">May 2021 – Jul 2021</div><div><h3>Graphic Designer and Video Editor</h3><div class="where">212 Communication</div></div></li>
-    </ol>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="wrap ab-sec">
-    <h2 class="ab-h">Education</h2>
-    <ol class="timeline" id="eduList">
-      <li class="now"><div class="when">In progress</div><div><h3>Master&#x27;s Degree in Graphic Design and Media Processing</h3><div class="where">Institut Tangérois de Gestion</div></div></li>
-      <li><div class="when">2023 – 2024</div><div><h3>Professional Bachelor&#x27;s Degree in Graphic Design and Media Processing</h3><div class="where">Institut Tangérois de Gestion</div></div></li>
-      <li><div class="when">2019 – 2021</div><div><h3>Diploma in Multimedia Development</h3><div class="where">Soft Institute</div></div></li>
-      <li><div class="when">2016 – 2019</div><div><h3>Literature Baccalauréat Diploma</h3><div class="where">Cady Ayad High School</div></div></li>
-    </ol>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="wrap ab-sec">
-    <h2 class="ab-h">Skills</h2>
-    <div class="skills" id="skillGroups">
-      <div><h3>Design</h3><ul><li>Brand and visual identity</li><li>Logo and type systems</li><li>Social media design</li><li>Print and packaging</li><li>Layout and editorial</li></ul></div>
-      <div><h3>Art direction</h3><ul><li>Campaign concepts</li><li>Paid ads creative strategy</li><li>Photo and video direction</li><li>Team leadership</li><li>Client presentation</li></ul></div>
-      <div><h3>Motion and video</h3><ul><li>2D motion design</li><li>Kinetic typography</li><li>Video editing</li><li>Color grading and sound</li></ul></div>
-      <div><h3>Image</h3><ul><li>Photo manipulation</li><li>Compositing</li><li>High-end retouching</li><li>Matte painting</li><li>Photography</li></ul></div>
-    </div>
-    <h3 class="sub">Tools and skills</h3>
-    <ul class="tools" id="toolList">
-      <li><span>Adobe Photoshop</span><small>Expert</small><span class="fuel" role="img" aria-label="Expert, 5 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></li>
-      <li><span>Adobe Premiere Pro</span><small>Expert</small><span class="fuel" role="img" aria-label="Expert, 5 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></li>
-      <li><span>Adobe After Effects</span><small>Advanced</small><span class="fuel" role="img" aria-label="Advanced, 4 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></li>
-      <li><span>Adobe Illustrator</span><small>Advanced</small><span class="fuel" role="img" aria-label="Advanced, 4 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></li>
-      <li><span>AI visual creation</span><small>Advanced</small><span class="fuel" role="img" aria-label="Advanced, 4 of 5"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></li>
-      <li><span>DaVinci Resolve</span><small>Working</small><span class="fuel" role="img" aria-label="Working, 2 of 5"><i class="f"></i><i class="f"></i><i></i><i></i><i></i></span></li>
-    </ul>
-  </section>
-
-
-  </div>
-
-  <!-- CONTACT -->
-  <section class="wrap contact" id="contact" data-gear="N">
-    <p>Have a brand, a launch or a ride worth filming?</p>
-    <a class="mail" href="mailto:oneclick3007@gmail.com">oneclick3007@gmail.com</a>
-    <p class="phone">Or call <a href="tel:+212724772126">+212 724 772 126</a></p>
-    <div class="socials">
-      <a href="https://www.behance.net/yasserdesigns11?locale=fr_FR" target="_blank" rel="noopener">Behance</a><a href="https://www.linkedin.com/in/ajana-yasser" target="_blank" rel="noopener">LinkedIn</a>
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <p class="q">Have a brand, a launch or a ride worth filming?</p>
+          <a class="mail" href="mailto:oneclick3007@gmail.com" data-cur="Write">oneclick3007@gmail.com</a>
+          <p class="call">Or call <a href="tel:+212724772126">+212 724 772 126</a></p>
+          <div class="links">
+            <a href="https://yasserajana10-collab.github.io/AjanaYasser" target="_blank" rel="noopener"><b>Portfolio site</b><span>yasserajana10-collab.github.io/AjanaYasser</span></a>
+            <a href="https://www.behance.net/yasserdesigns11" target="_blank" rel="noopener"><b>Behance</b><span>behance.net/yasserdesigns11</span></a>
+            <a href="https://www.linkedin.com/in/ajana-yasser" target="_blank" rel="noopener"><b>LinkedIn</b><span>linkedin.com/in/ajana-yasser</span></a>
+          </div>
+        </div>
+        <div>
+          <svg id="bigGauge" viewBox="0 0 240 230" aria-label="Rev counter at 11,550 r/min"></svg>
+          <p class="redline">Redline. Let’s start a project.</p>
+        </div>
+      </div>
+      <div class="foot"><span>Yasser Ajana, design and motion portfolio 2026</span><span>RPM WHEEL</span></div>
     </div>
   </section>
 </main>
 
-
-
-<footer>
-  <div class="wrap"><span>© 2026 RPM Wheel, the studio of Yasser Ajana. Designed and coded in-house.</span><button type="button" class="linkbtn" id="toTop">Back to top</button></div>
-</footer>
-
-<button type="button" class="thr" id="thr" aria-label="Throttle. Hold and scroll down to rev, or tap it.">
-  <span class="thr-leds" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-  <span class="thr-read" aria-hidden="true"><b id="thrRpm">0</b><small>r/min</small></span>
-  <span class="thr-hint" aria-hidden="true"><span class="fine">Hold, then scroll down</span><span class="coarse">Tap to rev</span></span>
-</button>
-
-<dialog id="lb" aria-labelledby="lbTitle">
-  <div class="lb-bar">
-    <span class="lb-pos" id="lbPos"></span>
-    <div class="lb-ctl">
-      <button type="button" id="lbPrev" aria-label="Previous project">‹</button>
-      <button type="button" id="lbNext" aria-label="Next project">›</button>
-      <button type="button" id="lbClose" aria-label="Close" autofocus>✕</button>
-    </div>
-  </div>
-  <div class="lb-case">
-    <div class="lb-text">
-      <h3 id="lbTitle"></h3>
-      <p class="who" id="lbWho"></p>
-      <div id="lbTags"></div>
-      <h4>The problem</h4>
-      <p id="lbProblem"></p>
-      <h4>The decisions</h4>
-      <div id="lbDecisions"></div>
-    </div>
-    <div class="lb-media" id="lbMedia"></div>
-  </div>
+<dialog id="lb" aria-label="Image viewer"><button class="close" id="lbClose" type="button" aria-label="Close image">×</button><figure class="lb"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure></dialog>
+<div class="loupe" aria-hidden="true"></div>
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <button class="close" id="dlgClose" type="button" aria-label="Close case">×</button>
+  <div class="dlg"><div class="dlg-text" id="dlgText"></div><div class="dlg-media" id="dlgMedia"></div></div>
 </dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const IMG = {
+"000": "assets/img/000.jpg",
+"003": "assets/img/003.jpg",
+"004": "assets/img/004.jpg",
+"009": "assets/img/009.jpg",
+"005": "assets/img/005.jpg",
+"006": "assets/img/006.jpg",
+"007": "assets/img/007.jpg",
+"013": "assets/img/013.jpg",
+"014": "assets/img/014.jpg",
+"015": "assets/img/015.jpg",
+"016": "assets/img/016.jpg",
+"020": "assets/img/020.jpg",
+"021": "assets/img/021.jpg",
+"022": "assets/img/022.jpg",
+"026": "assets/img/026.jpg",
+"027": "assets/img/027.jpg",
+"031": "assets/img/031.jpg",
+"028": "assets/img/028.jpg",
+"034": "assets/img/034.jpg",
+"029": "assets/img/029.jpg",
+"036": "assets/img/036.jpg",
+"037": "assets/img/037.jpg",
+"038": "assets/img/038.jpg",
+"039": "assets/img/039.jpg",
+"040": "assets/img/040.jpg",
+"046": "assets/img/046.jpg",
+"051": "assets/img/051.jpg",
+"052": "assets/img/052.jpg",
+"053": "assets/img/053.jpg",
+"047": "assets/img/047.jpg",
+"055": "assets/img/055.jpg",
+"056": "assets/img/056.jpg",
+"057": "assets/img/057.jpg",
+"048": "assets/img/048.jpg",
+"059": "assets/img/059.jpg",
+"060": "assets/img/060.jpg",
+"061": "assets/img/061.jpg",
+"049": "assets/img/049.jpg",
+"063": "assets/img/063.jpg",
+"064": "assets/img/064.jpg",
+"065": "assets/img/065.jpg",
+"ai1": "assets/img/ai1.jpg",
+"ai2": "assets/img/ai2.jpg",
+"ai3": "assets/img/ai3.jpg",
+"ph1": "assets/img/ph1.jpg",
+"ph2": "assets/img/ph2.jpg",
+"ph3": "assets/img/ph3.jpg",
+"ph4": "assets/img/ph4.jpg",
+"ph5": "assets/img/ph5.jpg"
+};
+const SITE = "yasserajana10-collab.github.io/AjanaYasser";
+const GEARS = [
+ {id:"g1",n:"1",title:"Brand and visual identity",desc:"Identity systems built from one idea, then tested on every surface the client will actually use.",count:"1 project",projects:[
+  {t:"Modern Smile",s:"Dental cabinet",tags:["Logo","Brand system","Stationery","Signage"],cover:"004",ar:"787/627",size:"wide",imgs:["004","009","005","006","007","013"],
+   lead:"The identity on every surface: concept, business cards, reception sign, stationery, and the color and type system.",
+   p:"Dental branding usually lands in one of two places: a tooth icon with a sparkle, or cold clinical blue. Both say “dentist”, and neither says “you’ll be looked after”. Most patients walk into a cabinet already a little anxious, so the brand’s first job wasn’t to look impressive. It had to look gentle, trustworthy and modern at the same time, and hold up on everything from a reception wall to a business card.",
+   d:[["One line, four meanings","The mark is a single stroke that reads as a tooth first, so it’s recognizable in a second. Inside it sits an M for Modern, the lower curve is a smile, the outer shape works as a protective shield, and the loop suggests continuity: a patient you keep for years, not a one-off visit. I only kept ideas that fit inside one line. Anything that needed a second shape got cut."],
+      ["Turquoise instead of dental blue","Blue is the category default, which makes a practice invisible next to its competitors. Turquoise #4EE0C7 still reads as clean and healthy, but it leans toward mint, which people already connect with freshness. Large surfaces use pale mint #E8F8F5 instead of pure white, which feels calmer and less clinical under bright practice lighting."],
+      ["Rounded type, structured subline","Hanken Grotesk has soft, open curves that echo the stroke of the mark, so the wordmark and symbol feel drawn by the same hand. DENTAL CABINET is set small and widely spaced underneath to add structure and seriousness under a friendly wordmark."],
+      ["Built for the wall first","The reception sign is the first thing a patient sees, so the mark had to work as a raised 3D object, not only as a flat file. A single tapered stroke holds up as a physical sign, embossed on paper, and at favicon size."],
+      ["The mark as texture","On the business card and letterhead, the mark is cropped large and faded off the edge. The stationery feels branded without repeating the logo everywhere, and the tagline “Your smile, our priority” gets room to breathe."]]}
+ ]},
+ {id:"g2",n:"2",title:"Social posts",desc:"Posts that get half a second to stop the thumb, then say one thing clearly.",count:"3 projects",projects:[
+  {t:"Shaolin on the pitch",s:"Concept post",tags:["Compositing","Social post"],cover:"014",ar:"1",imgs:["014"],
+   p:"In a feed you get about half a second before the thumb moves on, and a clean product shot doesn’t survive that. I wanted an image that makes people stop and ask “wait, what am I looking at?” So I put a Shaolin monk mid-kick on a football pitch, with a temple rising behind the stands. The idea is the easy part. The hard part is making two worlds that don’t belong together look like one photograph.",
+   d:[["One warm color against a cold scene","Stormy sky, blue-grey stands, dark grass. The orange robe is the only warm, saturated thing in the frame, so the eye goes straight to him wherever the post lands in the grid."],
+      ["Stadium light as the glue","The floodlights turn into bokeh and floating sparks, and the same light falls on his shoulders and the temple roof. Shared light is what makes a composite believable. Without it, he’d look pasted on."],
+      ["Low camera, frozen motion","The horizon sits low so he rises above the stands, and the kick is caught at its highest point. The flying cloth and rope carry the movement, so a still image reads as action."],
+      ["Square format","It fills the feed on every platform without anything getting cropped."]]},
+  {t:"Best car for rent today",s:"Car rental agency",tags:["Social post","Compositing"],cover:"015",ar:"633/680",imgs:["015"],
+   p:"Car rental posts all look alike: a car cut out on white, a price, a phone number. Scrolling past them feels like reading a catalogue. The message was one line, “best car for rent today”, but the real sell is the weekend you’ll have with it. The post had to feel like an adventure and still read clearly at thumb size.",
+   d:[["The car breaks the frame","An orange frame sits behind the Jeep and the car drives through it toward the viewer. That one overlap gives a flat post depth and makes the vehicle feel like it’s coming out of the phone."],
+      ["The road leads the eye","The wet asphalt and yellow center line pull the eye up from the bottom edge to the headlights, then on to the headline. The post reads in one pass, with no hunting."],
+      ["Headline in three short lines","Condensed bold type, stacked a few words at a time inside the frame, stays legible when the post shows up small in a feed or a story."],
+      ["Color pulled from the scene","The frame’s orange is picked from the autumn trees, so the graphic feels like part of the photo rather than something laid on top of it."]]},
+  {t:"Nike running post",s:"Spec work, not commissioned",tags:["Spec work","Social post"],cover:"016",ar:"454/493",imgs:["016"],
+   p:"A running shoe sells on feeling fast, but a social post is a still image. On top of that, Nike is so recognizable that the lazy move is to slap the logo on and call it done. I wanted the brand to be felt before it’s read, and the shoe to look like it’s already in motion.",
+   d:[["Tearing through the page","The shoe bursts through a torn paper edge on a rising diagonal. Torn edges suggest force, and a left-to-right upward line reads as forward motion."],
+      ["The logo as background, not a badge","The wordmark and swoosh are blown up and cropped behind the shoe. You recognize the brand at a glance, but the product stays the hero."],
+      ["A palette taken from the product","The red, orange and blue all come from the shoe’s own colorway, so the post feels like one object instead of a shoe placed on a background."]]}
+ ]},
+ {id:"g3",n:"3",title:"Manipulation and posters",desc:"Composites and poster art. Light, perspective and color matched until nobody asks which parts were real.",count:"3 projects",projects:[
+  {t:"The final round",s:"Poster concept",tags:["Poster","Compositing"],cover:"020",ar:"445/626",size:"tall",imgs:["020"],
+   p:"A fight poster has to deliver tension without giving away the result. Show the punch landing and the story’s over. I built the scene around the moment before: two fighters in a rundown gym, and the thing they’re fighting for sitting between them.",
+   d:[["The trophy as the stake","It sits low and centered, exactly between the two fighters. Your eye bounces from one to the other and lands on what’s at stake."],
+      ["Dusty, backlit haze","Window light cuts through the haze from behind. It separates the fighters from the background and gives the gym a worn, lived-in feel, like the story happens somewhere real."],
+      ["Handwritten title","Rough, chalky lettering instead of a heavy display font makes it feel like a gym wall rather than a blockbuster. It suits an underdog story."]]},
+  {t:"Signal",s:"Personal poster",tags:["Poster","Compositing","Color grading"],cover:"021",ar:"443/626",size:"tall",imgs:["021"],
+   p:"Character posters live or die on attitude. I wanted the city falling apart around him, with papers flying, fire, and neon tentacles curling overhead, while he walks straight at the camera completely unbothered. The challenge was layering that much chaos without losing him in it.",
+   d:[["Dead center and symmetrical","Everything else in the frame is moving and tilted, so the figure is the only stable thing. That contrast is what makes him look in control."],
+      ["Warm fire below, cool neon above","Fire lights him from underneath while teal and pink neon wash in from the street behind. Two light sources on the figure are what sell that he’s really standing in the scene."],
+      ["Motion blur on the debris only","The papers are blurred and the figure is sharp, which tells you in a single frame: fast chaos, still subject."]]},
+  {t:"Spider-Man: The reveal",s:"Personal fan poster",tags:["Fan art","Poster","Compositing"],cover:"022",ar:"441/626",size:"tall",imgs:["022"],
+   p:"Fan posters are everywhere, and most reuse the same hero pose. I wanted a quieter, more cinematic take: the character hanging upside down in a tight alley, as if the reveal is about to happen to whoever walks in next.",
+   d:[["Upside down, at the top edge","Flipping the figure and placing him at the top of the frame makes you look up. It feels like you’ve just spotted him from the street."],
+      ["The alley as leading lines","The walls converge toward a lit sign at the far end. That adds depth and frames the title in the lower third."],
+      ["A grade built from the suit","Red neon and deep shadows pull the whole city into the suit’s red and blue, so character and setting feel like one image."]]}
+ ]},
+ {id:"g4",n:"4",title:"Print and packaging",desc:"Flyers, gift cards and packaging, designed for how people hold, fold and pick them up.",count:"2 projects",projects:[
+  {t:"S&S Beauty",s:"Hair and beauty salon",tags:["Flyer","Gift card","Print"],cover:"026",ar:"978/734",size:"wide",imgs:["026","027","031"],
+   p:"A new salon needs two things right away: people through the door for the opening, and a way for customers to bring their friends. The flyer had to carry a full price list without looking like a menu board, and the gift card had to feel like a present, not a voucher.",
+   d:[["Folded flyer, offer on the cover","The bifold keeps the cover clean: the name and a pink opening-promotion banner as the hook. The price list sits inside, where people read it once they’ve already picked it up."],
+      ["Florals kept to the corners","Blush roses frame the edges and leave the center clear for text. The salon feels warm and feminine without the decoration fighting the prices."],
+      ["A gift card that looks wrapped","The gold bow on the front turns a card into something that looks gift-wrapped. The back has clear fields for who it’s from, who it’s for and the treatment, so staff can fill it in quickly at the desk."],
+      ["One system across every piece","The same florals, marble texture and wordmark run across the flyer and the cards, so the salon feels established from its first day."]]},
+  {t:"Bio Rituel",s:"Moroccan skincare, sold in France",tags:["Packaging","Label design"],cover:"029",ar:"556/408",size:"wide",imgs:["028","034","029"],
+   p:"Bio Rituel makes traditional Moroccan sprays and skincare, but sells in France. That’s the whole tension: the products need to feel authentic, yet they sit next to modern European cosmetics. Go too traditional and it looks like a souvenir. Go too minimal and it loses the reason anyone would pick it up.",
+   d:[["Matte black as the base","Black reads premium and modern on a French shelf, and it makes everything on top of it pop. It also works across every format, from the spray bottle to the refill pouch."],
+      ["Zellige at the bottom, like a floor","The Moroccan tile pattern is kept to a band at the base of each pack instead of covering everything. Heritage becomes the foundation rather than decoration, which keeps it elegant."],
+      ["Blossom and pink for softness","A diagonal sweep of pink and blossoms adds softness and hints at the rose water inside. The same pink carries onto the caps and triggers, so the range is recognizable from across a room."],
+      ["A script seal and two languages","The thin script wordmark in a circle feels like a handmade stamp. The pouch carries Arabic and French together, so it stays true to its origin and clear to French buyers."]]}
+ ]},
+ {id:"g5",n:"5",title:"Paid ads",desc:"Belocum’s Q4 app campaign: five ads, one headline system. The 3D icons and the map were created from scratch to match the brand’s design style.",count:"5 ads",projects:[
+  {t:"4,6/5 on Google",s:"Belocum, Q4 app campaign",tags:["Paid ad","Social proof","UI mockup"],cover:"036",ar:"1",imgs:["036"],
+   p:"Every staffing app says it’s trusted, so the word has stopped meaning anything. Belocum had something better than a claim: a 4.6 rating on Google from real reviews. The challenge was making one number feel like proof at thumb speed, instead of another brand patting itself on the back.",
+   d:[["A headline that dares you to doubt it","“You can’t fake that” turns the rating from a statistic into a statement. It answers the viewer’s skepticism before they have time to feel it."],
+      ["Show where the number comes from","The phone shows the Google listing itself: the name, the review count and the Reviews tab. People recognize that screen instantly, so the rating borrows Google’s credibility instead of relying on ours."],
+      ["Stars lifted off the screen","The rating is pulled out of the phone as an oversized bar in the brand’s lime, so it reads from across the feed. The last star is only partly filled, which keeps the 4.6 honest instead of rounding it up to five."],
+      ["Brand navy on a soft gradient","The headline and logo sit in Belocum’s deep navy over the campaign’s teal-to-lime gradient, the same system used across all five ads."]]},
+  {t:"34K+ Downloads",s:"Belocum, Q4 app campaign",tags:["Paid ad","3D icon","Social proof"],cover:"037",ar:"1",imgs:["037"],
+   p:"Download numbers are the most common proof point in app advertising, and people scroll past them without reading. 34K+ is a real milestone for Belocum, but on its own it’s just a figure. It needed to feel like a moment for the brand, and to tie into the #BeAwesome campaign line.",
+   d:[["The headline plays on the name","“That’s BeAwesome” sets “Be” in a serif, echoing the Be in BeLOCUM. The number gets a payoff, and the campaign hashtag becomes part of the sentence instead of a tag at the bottom."],
+      ["A 3D icon made for the brand","The download button isn’t stock 3D. I created it from scratch in Belocum’s turquoise and navy, with the same soft, rounded, tactile style as the rest of the campaign icons, so it looks like it belongs to the app’s world."],
+      ["One object, lots of air","A single floating icon with a soft shadow in the center, the headline top left, the store badges bottom left. Nothing competes, so it reads in one glance."],
+      ["Both store badges","The figure covers iPhone and Android, so both badges are shown, and whoever sees it knows the app is there for them."]]},
+  {t:"A paid lunch? We call it per diem.",s:"Belocum, Q4 app campaign",tags:["Paid ad","App screen","Benefit messaging"],cover:"038",ar:"1",imgs:["038"],
+   p:"Per diem is one of Belocum’s best benefits, but it’s a contract word. Many people skip it, and some don’t know what it covers. The ad had to turn a line in the fine print into something people actually want, without sounding like a benefits brochure.",
+   d:[["Question first, term second","The headline asks the thing people care about, a paid lunch, then names it. The viewer gets the benefit and learns the word in the same breath."],
+      ["A real screen from the app","The phone shows Belocum’s actual Contracts screen, with thousands of available contracts and a real shift card. It proves the benefit lives inside real work, not only in the ad."],
+      ["Cropped close, sized for the feed","The phone rises from the bottom edge and is cropped close, so the screen text stays readable even when the ad shows up small."],
+      ["Start of a headline series","“We call it…” became a pattern the campaign repeats, so each new benefit ad is recognizable as part of the same voice."]]},
+  {t:"Paid to commute? We call it normal.",s:"Belocum, Q4 app campaign",tags:["Paid ad","3D map","Benefit messaging"],cover:"039",ar:"1",imgs:["039"],
+   p:"Being paid for travel is a real advantage for professionals who take contracts in different places. But “travel compensation” is dull and hard to picture. The ad needed an image that makes the commute itself feel like part of the deal.",
+   d:[["The same headline system","It follows the per diem ad’s question-and-answer pattern. “We call it normal” reframes a perk other employers treat as special as something Belocum simply does."],
+      ["A 3D map created from scratch","Instead of a screenshot of a real map, which would look like any navigation app, I built a stylized 3D region in the brand’s lime and navy, with trees, small buildings and roads matched to the campaign’s soft, clay-like style."],
+      ["The route is the message","A glowing turquoise route connects three pins across the map, so the commute becomes the hero of the image: several places, one paid journey."],
+      ["Closing with the campaign line","#BeAwesome sits bottom right and the store badges bottom left, the same layout used in the other benefit ads."]]},
+  {t:"Not just a staffing app.",s:"Belocum, Q4 app campaign",tags:["Paid ad","3D icons","Brand positioning"],cover:"040",ar:"1",imgs:["040"],
+   p:"Staffing apps are usually seen as job boards: a list of shifts and nothing more. Belocum connects professionals and clinics directly, with the contract in the middle handling the details. The ad had to explain that relationship in a single image, with almost no words.",
+   d:[["Three pieces that lock together","A professional, the app and a clinic are joined like puzzle pieces. The app is literally the connection between the two, which says “more than a job board” without a paragraph of copy."],
+      ["Icons made to match the brand","The person, the phone with its contract cards and the clinic building were all created from scratch in Belocum’s turquoise and navy, in the same rounded 3D style as the download icon and the map, so the whole campaign feels like one set."],
+      ["One accent: the lime check","The only lime in the illustration is the check on the middle contract. It marks a confirmed match and pulls the eye to the result the app delivers."],
+      ["A short headline","Four words, centered. The image does the explaining, so the headline only has to change how people think about the category."]]}
+ ]},
+ {id:"g6",n:"6",night:true,title:"Motion design and video editing",desc:"Logo stings, kinetic type, product animation and ride edits cut to the sound of the engine.",count:"4 films",projects:[
+  {t:"Solar panel ad",s:"Solar installation offer, French market",tags:["Video editing","Kinetic text","Lead generation ad"],cover:"046",ar:"16/9",size:"wide",run:"0:37",imgs:["046","051","052","053"]},
+  {t:"Aionchat explainer",s:"AION, 2025",tags:["2D animation","Explainer"],cover:"047",ar:"16/9",size:"wide",run:"2:06",imgs:["047","055","056","057"]},
+  {t:"Umo detergent ad",s:"Umo, 2025",tags:["2D animation","Product ad"],cover:"048",ar:"16/9",size:"wide",run:"0:36",imgs:["048","059","060","061"]},
+  {t:"Belocum UI motion video",s:"Belocum app, 2026",tags:["UI animation","App promo"],cover:"049",ar:"445/791",size:"tall",run:"0:35",imgs:["049","063","064","065"]}
+ ]}
+];
+
+const TOOLS=[["Adobe Photoshop","Expert",12],["Adobe Premiere Pro","Expert",12],["Adobe After Effects","Advanced",9],["Adobe Illustrator","Advanced",9],["AI visual creation","Advanced",9],["DaVinci Resolve","Working",6]];
+
+
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ss=t=>t*t*(3-2*t);
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const coarse=matchMedia("(pointer:coarse)").matches;
+
+/* flat project list */
+const FLAT=[];GEARS.forEach((g,gi)=>g.projects.forEach((p,pi)=>FLAT.push({g,gi,p,pi})));
+
+/* ---------- gauges ---------- */
+const pt=(cx,cy,r,v)=>{const a=(-135+v*22.5)*Math.PI/180;return [cx+r*Math.sin(a),cy-r*Math.cos(a)]};
+function arc(cx,cy,r,v0,v1){const [x0,y0]=pt(cx,cy,r,v0),[x1,y1]=pt(cx,cy,r,v1);return `M${x0.toFixed(2)} ${y0.toFixed(2)} A${r} ${r} 0 ${(v1-v0)*22.5>180?1:0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`}
+(function(){
+  const cols=["#2E6BFF","#19B3E6","#2DCB72","#93DC34","#F1D532","#FFAE1F","#FF7420","#FF3D1C"];
+  let s="";for(let i=0;i<8;i++)s+=`<path d="${arc(50,54,38,i*1.5+.12,(i+1)*1.5-.12)}" stroke="${cols[i]}" stroke-width="11" fill="none"/>`;
+  s+=`<g id="logoNeedle" style="transform-origin:50px 54px"><path d="M50 54 L50 26" stroke="var(--ink)" stroke-width="5.5" stroke-linecap="round"/></g><circle cx="50" cy="54" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>`;
+  $("#logoGauge").innerHTML=s;
+})();
+function dial(svg,{cx,cy,r,face,tick,red,num,needle,id}){
+  let s=face?`<circle cx="${cx}" cy="${cy}" r="${r+14}" fill="${face}"/>`:"";
+  s+=`<path d="${arc(cx,cy,r-2,10,12)}" stroke="${red}" stroke-width="9" fill="none"/>`;
+  for(let v=0;v<=12;v+=.5){const [x0,y0]=pt(cx,cy,r-(v%1?7:15),v),[x1,y1]=pt(cx,cy,r-1,v);s+=`<line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${v>=10?red:tick}" stroke-width="${v%1?1.3:3}"/>`;
+    if(!(v%1)){const [tx,ty]=pt(cx,cy,r-32,v);s+=`<text x="${tx}" y="${ty+7}" text-anchor="middle" fill="${v>=10?red:num}" font-family="Big Shoulders Display,Arial Narrow,sans-serif" font-weight="800" font-size="20">${v}</text>`}}
+  s+=`<text x="${cx}" y="${cy+82}" text-anchor="middle" fill="${red}" font-family="Big Shoulders Display,Arial Narrow,sans-serif" font-weight="900" font-size="30" id="${id}T">0</text><text x="${cx}" y="${cy+96}" text-anchor="middle" fill="${num}" opacity=".7" font-family="Archivo,sans-serif" font-size="10">r/min</text>`;
+  s+=`<g id="${id}N" style="transform-origin:${cx}px ${cy}px;transform:rotate(-135deg)"><line x1="${cx}" y1="${cy+14}" x2="${cx}" y2="${cy-r+8}" stroke="${needle}" stroke-width="4" stroke-linecap="round"/></g><circle cx="${cx}" cy="${cy}" r="11" fill="${face||'none'}" stroke="${needle}" stroke-width="4"/>`;
+  svg.innerHTML=s;
+}
+dial($("#loadGauge"),{cx:120,cy:110,r:88,face:null,tick:"#1A1410",red:"#1A1410",num:"#1A1410",needle:"#1A1410",id:"ld"});
+dial($("#bigGauge"),{cx:120,cy:118,r:96,face:"#1A1410",tick:"#EFE3CD",red:"#FF5A1F",num:"#EFE3CD",needle:"#FF5A1F",id:"bg"});
+function setDial(id,v){document.getElementById(id+"N").style.transform=`rotate(${-135+v/1000*22.5}deg)`;document.getElementById(id+"T").textContent=Math.round(v).toLocaleString("en-US")}
+
+/* loader */
+(function(){
+  const t0=performance.now(), dur=reduce?300:1700;
+  function f(t){const k=clamp((t-t0)/dur);const e=k<.7?ss(k/.7)*11800:11800-(ss((k-.7)/.3))*10500;setDial("ld",e);$("#loadRpm").textContent=Math.round(e).toLocaleString("en-US");if(k<1)requestAnimationFrame(f);else{$("#loader").classList.add("out");document.body.classList.add("ready")}}
+  requestAnimationFrame(f);
+})();
+
+/* contact gauge */
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){const t0=performance.now();const f=t=>{const k=clamp((t-t0)/1800);setDial("bg",11550*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f);o.disconnect()}}),{threshold:.4}).observe($("#bigGauge"));
+
+/* marquee */
+(function(){const ic=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M3 17a9 9 0 1 1 18 0"/><path d="M12 17l6-6"/></svg>`;const w=["Rhythm","Control","A bit of speed","Brand systems","Campaigns","Edits"];const one=w.map(x=>`<span>${x}</span>${ic}`).join("");$("#marq").innerHTML=one+one+one+one})();
+
+/* index + tools */
+$("#idx").innerHTML=`<li><a href="#about" data-peek="003" data-cur="Read"><span class="n">N</span><div><h3>About me</h3><p>Experience, education, skills and tools.</p></div><span class="c">CV</span></a></li>`+
+ GEARS.map((g,gi)=>`<li><a href="#work" data-gear="${gi}" data-peek="${g.projects[0].cover}" data-cur="Ride"><span class="n">${g.n}</span><div><h3>${esc(g.title)}</h3><p>${esc(g.desc)}</p></div><span class="c">${g.count}</span></a></li>`).join("")+`<li><a href="#ai" data-peek="ai1" data-cur="Look"><span class="n">AI</span><div><h3>AI Ride</h3><p>AI visual creation: a launch campaign and studio photography made with AI.</p></div><span class="c">8 images</span></a></li>`;
+$("#tools").innerHTML=TOOLS.map(([n,l,v])=>`<li><span>${n}</span><span class="lv">${l}</span><div class="bars" aria-hidden="true">${Array.from({length:12},(_,i)=>`<i class="${i<v?(i>=10?'r':'f'):''}" style="transition-delay:${i*40}ms"></i>`).join("")}</div></li>`).join("");
+
+/* reveal */
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll(".bars").forEach(b=>b.classList.add("go"));rio.unobserve(e.target)}}),{threshold:.15});
+$$(".reveal").forEach(el=>rio.observe(el));
+
+/* cursor + peek */
+const cur=$(".cur"),dot=$(".cur-dot"),peek=$(".peek");let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;dot.style.transform=`translate(${tx}px,${ty}px)`});
+function setCur(label){if(label){cur.classList.add("big");cur.querySelector("span").textContent=label}else cur.classList.remove("big")}
+document.addEventListener("pointerover",e=>{const el=e.target.closest("[data-cur]");setCur(el?el.dataset.cur:(e.target.closest("a,button")?"":null));
+  const pk=e.target.closest("[data-peek]");if(pk){peek.querySelector("img").src=IMG[pk.dataset.peek];peek.classList.add("on")}else peek.classList.remove("on")});
+(function cl(){cx=lerp(cx,tx,.18);cy=lerp(cy,ty,.18);cur.style.transform=`translate(${cx}px,${cy}px)`;peek.style.left=(cx+30)+"px";peek.style.top=(cy-180)+"px";requestAnimationFrame(cl)})();
+
+/* header + rpm */
+let rev=0,scrollV=0,lastY=scrollY;
+const rpmEl=$("#rpm"),needle=document.getElementById("logoNeedle"),top_=$(".top");
+function blip(a){rev=Math.min(1,rev+a)}
+(function tick(){
+  const max=document.documentElement.scrollHeight-innerHeight,p=max>0?scrollY/max:0;
+  const base=1300+p*(11550-1300);rev*=.95;const r=Math.min(12000,base+rev*(11800-base));
+  rpmEl.textContent=(Math.round(r/10)*10).toLocaleString("en-US");
+  needle.style.transform=`rotate(${-135+(r/1000)*22.5}deg)`;
+  scrollV=scrollV*.85+(scrollY-lastY)*.15;lastY=scrollY;
+  top_.classList.toggle("solid",scrollY>40);
+  requestAnimationFrame(tick);
+})();
+
+/* engine sound */
+let actx;
+function engineSound(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();const t=actx.currentTime,f=actx.createBiquadFilter(),g=actx.createGain(),ws=actx.createWaveShaper();
+  const curve=new Float32Array(256);for(let i=0;i<256;i++){const x=i/128-1;curve[i]=Math.tanh(x*3)}ws.curve=curve;
+  [["sawtooth",1],["square",1.01],["sawtooth",.5]].forEach(([ty,m])=>{const o=actx.createOscillator();o.type=ty;o.frequency.setValueAtTime(38*m,t);o.frequency.exponentialRampToValueAtTime(70*m,t+.12);o.frequency.exponentialRampToValueAtTime(210*m,t+.55);o.frequency.exponentialRampToValueAtTime(48*m,t+1.7);o.connect(ws);o.start(t);o.stop(t+1.8)});
+  ws.connect(f);f.type="lowpass";f.frequency.setValueAtTime(500,t);f.frequency.linearRampToValueAtTime(1800,t+.55);f.frequency.linearRampToValueAtTime(400,t+1.7);
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.09,t+.05);g.gain.setValueAtTime(.09,t+.6);g.gain.exponentialRampToValueAtTime(.001,t+1.75);f.connect(g);g.connect(actx.destination)}catch(e){}}
+
+/* ---------- dialog ---------- */
+const dlg=$("#dlg");
+function openCase(fi){
+  const {g,p}=FLAT[fi];
+  let h=`<p class="k">Gear ${g.n}, ${esc(g.title)}</p><h2 id="dlgTitle">${esc(p.t)}</h2><div class="sub">${esc(p.s)}</div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`;
+  if(p.lead)h+=`<p style="margin-top:22px">${esc(p.lead)}</p>`;
+  if(p.p)h+=`<h3>The problem</h3><p class="prob">${esc(p.p)}</p><h3>The decisions</h3>`+p.d.map(([a,b])=>`<div class="dec"><b>${esc(a)}</b><p>${esc(b)}</p></div>`).join("");
+  if(p.run)h+=`<div class="time">${p.run}</div><small>running time</small><p class="watch">Watch the full film with sound at<br><a href="https://${SITE}" target="_blank" rel="noopener">${SITE}</a></p>`;
+  h+=`<div class="dlg-nav"><button type="button" data-step="-1">Previous project</button><button type="button" data-step="1">Next project</button></div>`;
+  $("#dlgText").innerHTML=h;$("#dlgText").scrollTop=0;
+  $("#dlgMedia").innerHTML=p.imgs.map((k,j)=>`<img src="${IMG[k]}" alt="${esc(p.t)}, image ${j+1}">`).join("");$("#dlgMedia").scrollTop=0;
+  $("#dlgText").querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>openCase((fi+ +b.dataset.step+FLAT.length)%FLAT.length));
+  if(!dlg.open)dlg.showModal();blip(.5);
+}
+$("#dlgClose").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+
+/* ---------- ring DOM ---------- */
+const ringSec=$("#work");
+ringSec.style.height=`calc(${FLAT.length} * 46vh + 200vh)`;
+const introP=()=>clamp(-ringSec.getBoundingClientRect().top/innerHeight);
+const browseP=()=>clamp((-ringSec.getBoundingClientRect().top-innerHeight)/(ringSec.offsetHeight-2*innerHeight));
+$("#gearbar").innerHTML=GEARS.map((g,gi)=>`<button type="button" data-gi="${gi}" aria-label="Gear ${g.n}, ${esc(g.title)}">${g.n}</button>`).join("");
+$("#ticks").innerHTML=FLAT.map(()=>"<i></i>").join("");
+$("#ringFallback").innerHTML=FLAT.map((f,i)=>`<button type="button" data-fi="${i}"><img src="${IMG[f.p.cover]}" alt="" loading="lazy"><b>${esc(f.p.t)}</b><br><small>${esc(f.p.s)}</small></button>`).join("");
+$$("#ringFallback [data-fi]").forEach(b=>b.onclick=()=>openCase(+b.dataset.fi));
+let ringIdx=0;
+function ringGo(i){i=clamp(i,0,FLAT.length-1);const r=ringSec.getBoundingClientRect();const top=scrollY+r.top;const span=ringSec.offsetHeight-2*innerHeight;scrollTo({top:top+innerHeight+span*(i/(FLAT.length-1))+2,behavior:reduce?"auto":"smooth"})}
+function gearStart(gi){return FLAT.findIndex(f=>f.gi===gi)}
+$$("#gearbar button").forEach(b=>b.onclick=()=>ringGo(gearStart(+b.dataset.gi)));
+$$("[data-gear]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();ringGo(gearStart(+a.dataset.gear))}));
+$$(".gears a[data-g]").forEach(a=>{if(/^\d$/.test(a.dataset.g))a.addEventListener("click",e=>{e.preventDefault();ringGo(gearStart(+a.dataset.g-1))})});
+$("#riPrev").onclick=()=>ringGo(ringIdx-1);$("#riNext").onclick=()=>ringGo(ringIdx+1);$("#riOpen").onclick=()=>openCase(ringIdx);
+function ringUI(i){
+  if(i===ringUI.last)return;ringUI.last=i;ringIdx=i;const f=FLAT[i];
+  $("#riN").textContent=f.g.n;$("#riG").textContent=`Gear ${f.g.n}, ${f.g.title}`;$("#riT").textContent=f.p.t;$("#riS").textContent=f.p.s;
+  $("#riC").textContent=`${String(i+1).padStart(2,"0")} / ${FLAT.length}`;
+  $$("#ticks i").forEach((t,k)=>{t.className=k<=i?(k>=FLAT.length-3?"r":"f"):""});
+  $$("#gearbar button").forEach(b=>b.classList.toggle("on",+b.dataset.gi===f.gi));
+}
+ringUI(0);
+
+/* nav active */
+function navActive(){
+  const a=$("#about").getBoundingClientRect(), w=ringSec.getBoundingClientRect();let g=null;
+  if(w.top<innerHeight*.5&&w.bottom>innerHeight*.5)g=String(FLAT[ringIdx].gi+1);
+  else if(a.top<innerHeight*.5&&a.bottom>innerHeight*.5)g="N";
+  else{const ai=$("#ai").getBoundingClientRect();if(ai.top<innerHeight*.5&&ai.bottom>innerHeight*.5)g="AI"}
+  $$(".gears a").forEach(x=>x.classList.toggle("on",x.dataset.g===g));
+}
+addEventListener("scroll",navActive,{passive:true});
+
+/* portrait parallax */
+addEventListener("scroll",()=>{const im=$("#portraitImg");const r=im.getBoundingClientRect();const k=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform=`scale(1.12) translateY(${k*-30}px)`},{passive:true});
+
+
+/* ---------- AI Ride ---------- */
+const PH=[
+ ["ph1","Navy and lime","Fabric folds at the knee, the soft floor shadow under the stool, the laces on the sneakers."],
+ ["ph2","Back to back","Flyaway hair, freckles, the stitching along the pocket seams."],
+ ["ph3","Off duty","The knit of the sweater, curls catching the light, the zipper teeth on the cardigan."],
+ ["ph4","Lab coats","The cotton weave on the coats, smile lines, the rib of the knit underneath."],
+ ["ph5","Tablet in hand","Reflections in the glasses, the pens clipped in the pocket, the texture of the sweater."]
+];
+const AIC={ai1:["Now in the US","Liberty in navy scrubs with lime piping, phone in hand, the sun setting behind the skyline."],ai2:["Times Square snow globe","A dental chair sealed in a snow globe, framed low between a professional’s legs, the crew in teal and lime."],ai3:["Liberty on shift","Over the shoulder: a teal scrub cap under the crown and the Belocum app on screen, Manhattan behind."]};
+PH.forEach(([k,t,d])=>AIC[k]=[t,"AI photography. Look at: "+d.charAt(0).toLowerCase()+d.slice(1)]);
+$("#pgrid").innerHTML=PH.map(([k,t,d],i)=>`<figure class="ph reveal"><button class="fr" type="button" data-lb="${k}" data-zoom="${k}" aria-label="View ${t} full size" style="border:0;padding:0;width:100%;display:block"><img src="${IMG[k]}" alt="AI-generated studio portrait: ${t}" loading="lazy"><span class="badge">AI</span></button><figcaption><b>${t}</b><em>${String(i+1).padStart(2,"0")}</em><span>Look at: ${d.charAt(0).toLowerCase()+d.slice(1)}</span></figcaption></figure>`).join("");
+$$("#pgrid .reveal").forEach(el=>rio.observe(el));
+const lb=$("#lb");
+document.addEventListener("click",e=>{const b=e.target.closest("[data-lb]");if(!b)return;const k=b.dataset.lb;$("#lbImg").src=IMG[k];$("#lbImg").alt=AIC[k][0];$("#lbCap").innerHTML=`<b>${esc(AIC[k][0])}</b>${esc(AIC[k][1])}`;lb.showModal();loupe.classList.remove("on")});
+$("#lbClose").onclick=()=>lb.close();lb.addEventListener("click",e=>{if(e.target===lb)lb.close()});
+const loupe=$(".loupe");
+document.addEventListener("pointermove",e=>{const fr=e.target.closest&&e.target.closest("[data-zoom]");if(!fr||e.pointerType==="touch"){loupe.classList.remove("on");return}
+  const img=fr.querySelector("img"),r=img.getBoundingClientRect(),z=3;const x=e.clientX-r.left,y=e.clientY-r.top;
+  loupe.style.backgroundImage=`url(${img.src})`;const nh=r.width*(img.naturalHeight/img.naturalWidth||1.25),oy=(nh-r.height)/2;loupe.style.backgroundSize=`${r.width*z}px ${nh*z}px`;loupe.style.backgroundPosition=`${-x*z+110}px ${-(y+oy)*z+110}px`;
+  loupe.style.left=e.clientX+"px";loupe.style.top=e.clientY+"px";loupe.classList.add("on")});
+
+/* ---------- 3D ---------- */
+function hasGL(){try{const c=document.createElement("canvas");return !!(window.WebGLRenderingContext&&(c.getContext("webgl")||c.getContext("experimental-webgl")))}catch(e){return false}}
+const C=h=>new THREE.Color(h).convertSRGBToLinear();
+const V=(x,y,z=0)=>new THREE.Vector3(x,y,z);
+function makeEnv(renderer){
+  const pm=new THREE.PMREMGenerator(renderer);const es=new THREE.Scene();
+  const g=new THREE.SphereGeometry(20,32,16);const cols=[];const pos=g.attributes.position;
+  for(let i=0;i<pos.count;i++){const y=pos.getY(i)/20;const c=new THREE.Color().lerpColors(C("#6B5440"),C("#F4E8D2"),clamp(y*.5+.55));cols.push(c.r,c.g,c.b)}
+  g.setAttribute("color",new THREE.Float32BufferAttribute(cols,3));
+  es.add(new THREE.Mesh(g,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.BackSide})));
+  const box=(w,h,x,y,z,col,int)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:new THREE.Color(col).multiplyScalar(int),side:THREE.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);es.add(m)};
+  box(14,5,0,14,4,"#ffffff",4);box(4,10,14,4,6,"#fff4e0",2.6);box(4,10,-14,3,-4,"#FF5A1F",3);box(10,2,0,2,-15,"#fff0d8",1.6);
+  const t=pm.fromScene(es,.03).texture;pm.dispose();return t;
+}
+function glowTex(){const c=document.createElement("canvas");c.width=c.height=128;const x=c.getContext("2d");const g=x.createRadialGradient(64,64,0,64,64,64);g.addColorStop(0,"rgba(255,255,255,1)");g.addColorStop(.25,"rgba(255,255,255,.55)");g.addColorStop(1,"rgba(255,255,255,0)");x.fillStyle=g;x.fillRect(0,0,128,128);const t=new THREE.CanvasTexture(c);return t}
+function tube(a,b,r,mat,r2){const d=new THREE.Vector3().subVectors(b,a);const len=d.length();const m=new THREE.Mesh(new THREE.CylinderGeometry(r2??r,r,len,16),mat);m.position.copy(a).addScaledVector(d,.5);m.quaternion.setFromUnitVectors(V(0,1,0),d.clone().normalize());m.castShadow=true;return m}
+function ctube(pts,r,mat,closed=false,seg=64){const c=new THREE.CatmullRomCurve3(pts,closed,"catmullrom",.5);const m=new THREE.Mesh(new THREE.TubeGeometry(c,seg,r,10,closed),mat);m.castShadow=true;return m}
+function shape(cmds){const s=new THREE.Shape();cmds.forEach((c,i)=>{if(i===0)s.moveTo(c[0],c[1]);else if(c.length===4)s.quadraticCurveTo(c[0],c[1],c[2],c[3]);else s.lineTo(c[0],c[1])});return s}
+function ext(cmds,depth,bevel,mat,seg=5){const g=new THREE.ExtrudeGeometry(shape(cmds),{depth,bevelEnabled:bevel>0,bevelThickness:bevel,bevelSize:bevel*.8,bevelSegments:seg,curveSegments:24});g.translate(0,0,-depth/2);const m=new THREE.Mesh(g,mat);m.castShadow=true;m.receiveShadow=true;return m}
+function joint(group,p,r,mat){const s=new THREE.Mesh(new THREE.SphereGeometry(r,18,14),mat);s.position.copy(p);s.castShadow=true;group.add(s)}
+
+/* ---------- 3D showroom ring ---------- */
+function initRing(){
+  const cv=$("#ring"),box=cv.parentElement;
+  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(34,1,.1,200);
+  const H=3.4,GAP=.6;
+  const ring=new THREE.Group();scene.add(ring);
+  const loader=new THREE.TextureLoader();
+  const vs=`uniform float uR,uVel,uHover;varying vec2 vUv;void main(){vUv=uv;vec3 p=position;float a=p.x/uR;p.x=sin(a)*uR;p.z=(cos(a)-1.)*uR;p.z+=sin(uv.y*3.14159)*uVel*.45+uHover*.25*sin(uv.x*3.14159)*sin(uv.y*3.14159);gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}`;
+  const fs=`uniform sampler2D uTex;uniform float uActive,uVel,uAspT,uAspP,uLoaded;uniform vec3 uInk,uPaper,uOrange;varying vec2 vUv;
+  void main(){vec2 uv=vUv;float r=uAspP/uAspT;if(r<1.){uv.x=(uv.x-.5)*r+.5;}else{uv.y=(uv.y-.5)/r+.5;}
+  float sh=uVel*.006;vec3 c=vec3(texture2D(uTex,uv+vec2(sh,0)).r,texture2D(uTex,uv).g,texture2D(uTex,uv-vec2(sh,0)).b);
+  float gray=dot(c,vec3(.299,.587,.114));vec3 duo=mix(uInk,uPaper,smoothstep(.05,.95,gray));
+  c=mix(duo,c,uActive);c=mix(uPaper*.9,c,uLoaded);
+  float e=.012;float edge=step(vUv.x,e)+step(1.-e,vUv.x)+step(vUv.y,e*uAspP)+step(1.-e*uAspP,vUv.y);c=mix(c,uOrange,clamp(edge,0.,1.)*uActive);
+  gl_FragColor=vec4(c,1.);}`;
+  const ink=new THREE.Color("#1A1410"),paper=new THREE.Color("#E9DCC4"),orange=new THREE.Color("#FF5A1F");
+  // widths from aspect
+  const items=FLAT.map(f=>{const [a,b]=String(f.p.ar).split("/").map(Number);const asp=b?a/b:a;const w=Math.min(H*asp,H*1.78);return {f,w,asp:w/H}});
+  const total=items.reduce((s,it)=>s+it.w+GAP,0);const R=Math.max(10,total/(Math.PI*1.45));
+  let theta=0;const angles=[];items.forEach((it,i)=>{if(i>0)theta+=(items[i-1].w/2+GAP+it.w/2)/R;angles.push(theta)});
+  const meshes=items.map((it,i)=>{
+    const u={uTex:{value:null},uR:{value:R},uVel:{value:0},uHover:{value:0},uActive:{value:0},uAspT:{value:1},uAspP:{value:it.asp},uLoaded:{value:0},uInk:{value:ink},uPaper:{value:paper},uOrange:{value:orange}};
+    const m=new THREE.Mesh(new THREE.PlaneGeometry(it.w,H,40,12),new THREE.ShaderMaterial({uniforms:u,vertexShader:vs,fragmentShader:fs}));
+    loader.load(IMG[it.f.p.cover],t=>{t.minFilter=THREE.LinearFilter;u.uTex.value=t;u.uAspT.value=t.image.width/t.image.height;u.uLoaded.value=1});
+    const g=new THREE.Group();g.rotation.y=angles[i];g.add(m);m.position.z=R;m.userData.i=i;ring.add(g);return m});
+  // floor line ring
+  const lr=new THREE.Mesh(new THREE.RingGeometry(R-.01,R+.01,256),new THREE.MeshBasicMaterial({color:0xFF5A1F,side:THREE.DoubleSide}));lr.rotation.x=-Math.PI/2;lr.position.y=-H/2-.35;ring.add(lr);
+  const ticks=new THREE.InstancedMesh(new THREE.BoxGeometry(.03,.002,.25),new THREE.MeshBasicMaterial({color:0x1A1410,transparent:true,opacity:.35}),180);const o=new THREE.Object3D();
+  for(let i=0;i<180;i++){const a=i/180*Math.PI*2;o.position.set(Math.sin(a)*(R+.25),-H/2-.35,Math.cos(a)*(R+.25));o.rotation.y=a;o.scale.z=i%15?1:2.4;o.updateMatrix();ticks.setMatrixAt(i,o.matrix)}ring.add(ticks);
+
+  let cur=0,prevCur=0,visible=false,mx=0,my=0,hover=-1,kI=1;const introName=$("#introName"),hello=$("#intro");
+  const ray=new THREE.Raycaster(),mv=new THREE.Vector2();
+  function size(){const w=box.clientWidth,h=box.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+  new ResizeObserver(size).observe(box);size();
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting}).observe(box);
+  cv.addEventListener("pointermove",e=>{const r=cv.getBoundingClientRect();mv.x=(e.clientX-r.left)/r.width*2-1;mv.y=-(e.clientY-r.top)/r.height*2+1;mx=mv.x;my=mv.y;
+    ray.setFromCamera(mv,cam);const h=ray.intersectObjects(meshes)[0];hover=h?h.object.userData.i:-1;cv.dataset.cur=hover<0?"":(hover===ringIdx?"Open":"View");setCur(hover<0?null:cv.dataset.cur);cv.style.cursor=hover<0?"grab":"pointer"});
+  cv.addEventListener("pointerleave",()=>{hover=-1;setCur(null)});
+  let dragX=null,moved=0;
+  cv.addEventListener("pointerdown",e=>{dragX=e.clientX;moved=0});
+  addEventListener("pointermove",e=>{if(dragX==null)return;const dx=e.clientX-dragX;dragX=e.clientX;moved+=Math.abs(dx);if(e.pointerType!=="touch")scrollBy(0,-dx*2.2)});
+  addEventListener("pointerup",()=>{if(dragX!=null&&moved<6&&hover>=0){introP()<.6?ringGo(hover):(hover===ringIdx?openCase(hover):ringGo(hover))}dragX=null});
+  function loop(t){
+    requestAnimationFrame(loop);if(!visible)return;
+    const ip=introP(),p=browseP();const target=p*(FLAT.length-1);
+    kI=lerp(kI,1-ss(ip),reduce?1:.08);
+    ringSec.classList.toggle("intro-on",ip<.6);
+    const ki=1-ss(ip);introName.style.transform=`translateY(${-(1-ki)*18}vh) scale(${1-(1-ki)*.08})`;introName.style.opacity=ki;hello.style.opacity=clamp(ki*1.6-.6);
+    cur=lerp(cur,target,reduce?1:.075);const vel=clamp((cur-prevCur)*6,-1,1);prevCur=cur;
+    const i0=Math.floor(cur),f=cur-i0,a=lerp(angles[clamp(i0,0,FLAT.length-1)],angles[clamp(i0+1,0,FLAT.length-1)],f);
+    const mid=angles[Math.floor(FLAT.length/2)]*.5;ring.rotation.y=-lerp(a,mid,kI)+kI*(reduce?0:Math.sin(t*.00018)*.3);ring.rotation.x=lerp(ring.rotation.x,my*.03,.05);
+    ring.position.y=-kI*(box.clientWidth<700?1.0:2.1);const sc=1-kI*.32;ring.scale.setScalar(sc);ring.position.z=R*(1-sc);
+    const active=Math.round(clamp(cur,0,FLAT.length-1));ringUI(active);navActive();
+    meshes.forEach((m,i)=>{const u=m.material.uniforms;u.uVel.value=lerp(u.uVel.value,vel,.2);u.uActive.value=lerp(u.uActive.value,i===active?1:kI*.85,.1);u.uHover.value=lerp(u.uHover.value,i===hover?1:0,.12);
+      m.position.y=lerp(m.position.y,i===active?.15:-.05,.1);m.parent.visible=Math.abs(angles[i]-a)<1.25+kI*1.4});
+    const mob=box.clientWidth<700;const d=mob?15:11.5;
+    cam.position.set(mx*.5,.2+my*.2+kI*.6,R+d+kI*2);cam.lookAt(0,.05-kI*.4,R);
+    renderer.render(scene,cam);
+  }
+  requestAnimationFrame(loop);
+}
+
+if(!window.THREE||!hasGL()){document.documentElement.classList.add("no-gl")}
+else{try{initRing()}catch(e){console.error(e);document.documentElement.classList.add("no-gl")}}
+</script>
 </body>
 </html>
