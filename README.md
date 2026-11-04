@@ -14,6 +14,7 @@ Interactive design and motion portfolio of Yasser Ajana, art director, graphic a
 ```
 index.html          the whole site (HTML, CSS and JavaScript)
 assets/img/         project images
+assets/video/       the four films (WebM and MP4) with their poster frames
 assets/favicon.svg  RPM Wheel gauge icon
 .nojekyll           tells GitHub Pages to serve files as they are
 ```
@@ -31,6 +32,7 @@ Then open `http://localhost:8000`. On GitHub Pages everything works as is.
 ## Editing
 
 - Project text (problem and decisions) lives in the `GEARS` list inside `index.html`.
+- Films live in `assets/video/`. Each one has a `.webm`, an `.mp4` and a `-poster.jpg` with the same name. Every file is under GitHub’s 25 MB browser upload limit.
 - To swap an image, replace the file in `assets/img/` and keep the same name, or update its path in the `IMG` list.
 - Three.js (r128) loads from cdnjs and the fonts (Big Shoulders Display, Archivo) from Google Fonts, so the site needs an internet connection.
 

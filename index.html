@@ -274,6 +274,8 @@ dialog::backdrop{background:rgba(26,20,16,.75);backdrop-filter:blur(6px)}
 .time{font-family:var(--display);font-weight:900;font-size:120px;line-height:.85;color:var(--orange);margin-top:30px}
 .time+small{color:var(--muted)}
 .watch{margin-top:28px}
+.film{width:100%;height:auto;background:#000;display:block}
+.film.tall{max-height:80svh;width:auto;max-width:100%;margin:0 auto}
 .watch a{font-weight:700;text-decoration:none;border-bottom:3px solid var(--orange);word-break:break-all}
 .close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:3;width:48px;height:48px;border:0;background:var(--ink);color:var(--paper);font-size:24px;cursor:pointer;line-height:1}
 .close:hover{background:var(--orange);color:var(--on-orange)}
@@ -507,22 +509,6 @@ const IMG = {
 "038": "assets/img/038.jpg",
 "039": "assets/img/039.jpg",
 "040": "assets/img/040.jpg",
-"046": "assets/img/046.jpg",
-"051": "assets/img/051.jpg",
-"052": "assets/img/052.jpg",
-"053": "assets/img/053.jpg",
-"047": "assets/img/047.jpg",
-"055": "assets/img/055.jpg",
-"056": "assets/img/056.jpg",
-"057": "assets/img/057.jpg",
-"048": "assets/img/048.jpg",
-"059": "assets/img/059.jpg",
-"060": "assets/img/060.jpg",
-"061": "assets/img/061.jpg",
-"049": "assets/img/049.jpg",
-"063": "assets/img/063.jpg",
-"064": "assets/img/064.jpg",
-"065": "assets/img/065.jpg",
 "ai1": "assets/img/ai1.jpg",
 "ai2": "assets/img/ai2.jpg",
 "ai3": "assets/img/ai3.jpg",
@@ -530,9 +516,14 @@ const IMG = {
 "ph2": "assets/img/ph2.jpg",
 "ph3": "assets/img/ph3.jpg",
 "ph4": "assets/img/ph4.jpg",
-"ph5": "assets/img/ph5.jpg"
+"ph5": "assets/img/ph5.jpg",
+"v_solar": "assets/video/solar-poster.jpg",
+"v_aion": "assets/video/aion-poster.jpg",
+"v_umo": "assets/video/umo-poster.jpg",
+"v_belocum": "assets/video/belocum-poster.jpg"
 };
 const SITE = "yasserajana10-collab.github.io/AjanaYasser";
+const VID = "assets/video/";
 const GEARS = [
  {id:"g1",n:"1",title:"Brand and visual identity",desc:"Identity systems built from one idea, then tested on every surface the client will actually use.",count:"1 project",projects:[
   {t:"Modern Smile",s:"Dental cabinet",tags:["Logo","Brand system","Stationery","Signage"],cover:"004",ar:"787/627",size:"wide",imgs:["004","009","005","006","007","013"],
@@ -627,10 +618,10 @@ const GEARS = [
       ["A short headline","Four words, centered. The image does the explaining, so the headline only has to change how people think about the category."]]}
  ]},
  {id:"g6",n:"6",night:true,title:"Motion design and video editing",desc:"Logo stings, kinetic type, product animation and ride edits cut to the sound of the engine.",count:"4 films",projects:[
-  {t:"Solar panel ad",s:"Solar installation offer, French market",tags:["Video editing","Kinetic text","Lead generation ad"],cover:"046",ar:"16/9",size:"wide",run:"0:37",imgs:["046","051","052","053"]},
-  {t:"Aionchat explainer",s:"AION, 2025",tags:["2D animation","Explainer"],cover:"047",ar:"16/9",size:"wide",run:"2:06",imgs:["047","055","056","057"]},
-  {t:"Umo detergent ad",s:"Umo, 2025",tags:["2D animation","Product ad"],cover:"048",ar:"16/9",size:"wide",run:"0:36",imgs:["048","059","060","061"]},
-  {t:"Belocum UI motion video",s:"Belocum app, 2026",tags:["UI animation","App promo"],cover:"049",ar:"445/791",size:"tall",run:"0:35",imgs:["049","063","064","065"]}
+  {t:"Solar panel ad",s:"Solar installation offer, French market",tags:["Video editing","Kinetic text","Lead generation ad"],cover:"v_solar",ar:"16/9",size:"wide",run:"0:37",vid:"solar-panel-ad",imgs:[]},
+  {t:"Aionchat explainer",s:"AION, 2025",tags:["2D animation","Explainer"],cover:"v_aion",ar:"16/9",size:"wide",run:"2:06",vid:"aion-explainer",imgs:[]},
+  {t:"Umo detergent ad",s:"Umo, 2025",tags:["2D animation","Product ad"],cover:"v_umo",ar:"16/9",size:"wide",run:"0:36",vid:"umo-ad",imgs:[]},
+  {t:"Belocum UI motion video",s:"Belocum app, 2026",tags:["UI animation","App promo"],cover:"v_belocum",ar:"9/16",size:"tall",run:"0:35",vid:"belocum-ui",imgs:[]}
  ]}
 ];
 
@@ -730,13 +721,14 @@ function openCase(fi){
   let h=`<p class="k">Gear ${g.n}, ${esc(g.title)}</p><h2 id="dlgTitle">${esc(p.t)}</h2><div class="sub">${esc(p.s)}</div><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`;
   if(p.lead)h+=`<p style="margin-top:22px">${esc(p.lead)}</p>`;
   if(p.p)h+=`<h3>The problem</h3><p class="prob">${esc(p.p)}</p><h3>The decisions</h3>`+p.d.map(([a,b])=>`<div class="dec"><b>${esc(a)}</b><p>${esc(b)}</p></div>`).join("");
-  if(p.run)h+=`<div class="time">${p.run}</div><small>running time</small><p class="watch">Watch the full film with sound at<br><a href="https://${SITE}" target="_blank" rel="noopener">${SITE}</a></p>`;
+  if(p.run)h+=`<div class="time">${p.run}</div><small>running time</small><p class="watch">Press play to watch the full film with sound.</p>`;
   h+=`<div class="dlg-nav"><button type="button" data-step="-1">Previous project</button><button type="button" data-step="1">Next project</button></div>`;
   $("#dlgText").innerHTML=h;$("#dlgText").scrollTop=0;
-  $("#dlgMedia").innerHTML=p.imgs.map((k,j)=>`<img src="${IMG[k]}" alt="${esc(p.t)}, image ${j+1}">`).join("");$("#dlgMedia").scrollTop=0;
+  $("#dlgMedia").innerHTML=(p.vid?`<video class="film${p.size==="tall"?" tall":""}" controls playsinline preload="metadata" poster="${IMG[p.cover]}"><source src="${VID}${p.vid}.webm" type="video/webm"><source src="${VID}${p.vid}.mp4" type="video/mp4">Your browser can’t play this video.</video>`:"")+p.imgs.map((k,j)=>`<img src="${IMG[k]}" alt="${esc(p.t)}, image ${j+1}">`).join("");$("#dlgMedia").scrollTop=0;
   $("#dlgText").querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>openCase((fi+ +b.dataset.step+FLAT.length)%FLAT.length));
   if(!dlg.open)dlg.showModal();blip(.5);
 }
+dlg.addEventListener("close",()=>dlg.querySelectorAll("video").forEach(v=>v.pause()));
 $("#dlgClose").onclick=()=>dlg.close();
 dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
 
@@ -845,7 +837,10 @@ function initRing(){
   const meshes=items.map((it,i)=>{
     const u={uTex:{value:null},uR:{value:R},uVel:{value:0},uHover:{value:0},uActive:{value:0},uAspT:{value:1},uAspP:{value:it.asp},uLoaded:{value:0},uInk:{value:ink},uPaper:{value:paper},uOrange:{value:orange}};
     const m=new THREE.Mesh(new THREE.PlaneGeometry(it.w,H,40,12),new THREE.ShaderMaterial({uniforms:u,vertexShader:vs,fragmentShader:fs}));
-    loader.load(IMG[it.f.p.cover],t=>{t.minFilter=THREE.LinearFilter;u.uTex.value=t;u.uAspT.value=t.image.width/t.image.height;u.uLoaded.value=1});
+    loader.load(IMG[it.f.p.cover],t=>{t.minFilter=THREE.LinearFilter;if(!u.uTex.value||!u.isVid){u.uTex.value=t;u.uAspT.value=t.image.width/t.image.height}u.uLoaded.value=1});
+    if(it.f.p.vid){const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.preload="none";v.crossOrigin="anonymous";
+      v.innerHTML=`<source src="${VID}${it.f.p.vid}.webm" type="video/webm"><source src="${VID}${it.f.p.vid}.mp4" type="video/mp4">`;
+      u.video=v;v.addEventListener("playing",()=>{if(!u.vtex){u.vtex=new THREE.VideoTexture(v);u.vtex.minFilter=THREE.LinearFilter}u.isVid=true;u.uTex.value=u.vtex;u.uAspT.value=v.videoWidth/v.videoHeight})}
     const g=new THREE.Group();g.rotation.y=angles[i];g.add(m);m.position.z=R;m.userData.i=i;ring.add(g);return m});
   // floor line ring
   const lr=new THREE.Mesh(new THREE.RingGeometry(R-.01,R+.01,256),new THREE.MeshBasicMaterial({color:0xFF5A1F,side:THREE.DoubleSide}));lr.rotation.x=-Math.PI/2;lr.position.y=-H/2-.35;ring.add(lr);
@@ -865,7 +860,7 @@ function initRing(){
   addEventListener("pointermove",e=>{if(dragX==null)return;const dx=e.clientX-dragX;dragX=e.clientX;moved+=Math.abs(dx);if(e.pointerType!=="touch")scrollBy(0,-dx*2.2)});
   addEventListener("pointerup",()=>{if(dragX!=null&&moved<6&&hover>=0){introP()<.6?ringGo(hover):(hover===ringIdx?openCase(hover):ringGo(hover))}dragX=null});
   function loop(t){
-    requestAnimationFrame(loop);if(!visible)return;
+    requestAnimationFrame(loop);if(!visible){meshes.forEach(m=>{const v=m.material.uniforms.video;if(v&&!v.paused)v.pause()});return}
     const ip=introP(),p=browseP();const target=p*(FLAT.length-1);
     kI=lerp(kI,1-ss(ip),reduce?1:.08);
     ringSec.classList.toggle("intro-on",ip<.6);
@@ -875,7 +870,7 @@ function initRing(){
     const mid=angles[Math.floor(FLAT.length/2)]*.5;ring.rotation.y=-lerp(a,mid,kI)+kI*(reduce?0:Math.sin(t*.00018)*.3);ring.rotation.x=lerp(ring.rotation.x,my*.03,.05);
     ring.position.y=-kI*(box.clientWidth<700?1.0:2.1);const sc=1-kI*.32;ring.scale.setScalar(sc);ring.position.z=R*(1-sc);
     const active=Math.round(clamp(cur,0,FLAT.length-1));ringUI(active);navActive();
-    meshes.forEach((m,i)=>{const u=m.material.uniforms;u.uVel.value=lerp(u.uVel.value,vel,.2);u.uActive.value=lerp(u.uActive.value,i===active?1:kI*.85,.1);u.uHover.value=lerp(u.uHover.value,i===hover?1:0,.12);
+    meshes.forEach((m,i)=>{const u=m.material.uniforms;if(u.video){const want=i===active&&kI<.5&&!document.hidden;if(want&&u.video.paused)u.video.play().catch(()=>{});else if(!want&&!u.video.paused)u.video.pause()}u.uVel.value=lerp(u.uVel.value,vel,.2);u.uActive.value=lerp(u.uActive.value,i===active?1:kI*.85,.1);u.uHover.value=lerp(u.uHover.value,i===hover?1:0,.12);
       m.position.y=lerp(m.position.y,i===active?.15:-.05,.1);m.parent.visible=Math.abs(angles[i]-a)<1.25+kI*1.4});
     const mob=box.clientWidth<700;const d=mob?15:11.5;
     cam.position.set(mx*.5,.2+my*.2+kI*.6,R+d+kI*2);cam.lookAt(0,.05-kI*.4,R);
