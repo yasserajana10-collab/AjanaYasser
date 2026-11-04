@@ -222,7 +222,7 @@ button{font:inherit;color:inherit}
 .about-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:start}
 .portrait{position:sticky;top:100px}
 .portrait .frame{position:relative;overflow:hidden}
-.portrait img{width:100%;aspect-ratio:2/3;object-fit:cover;transform:scale(1.08);will-change:transform}
+.portrait img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 20%;background:#fff;transform:scale(1.08);will-change:transform}
 .portrait .frame::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--orange)}
 .portrait .tag{position:absolute;right:-14px;top:30px;background:var(--orange);color:var(--on-orange);font-family:var(--display);font-weight:900;font-size:22px;text-transform:uppercase;padding:8px 14px;transform:rotate(4deg)}
 .about h2+p{font-size:clamp(22px,2vw,30px);line-height:1.28;margin:26px 0 22px;max-width:21em;font-weight:500}
@@ -316,7 +316,7 @@ dialog::backdrop{background:rgba(26,20,16,.75);backdrop-filter:blur(6px)}
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="logo" href="#work" aria-label="RPM Wheel, back to top">
+    <a class="logo" href="#index" aria-label="RPM Wheel, back to top">
       <svg viewBox="0 0 100 100" id="logoGauge" aria-hidden="true"></svg>
       <span>RPM WHEEL</span>
     </a>
@@ -330,6 +330,16 @@ dialog::backdrop{background:rgba(26,20,16,.75);backdrop-filter:blur(6px)}
 </header>
 
 <main>
+  <section class="wrap sec" id="index">
+    <div class="contents">
+      <div class="reveal">
+        <h2 class="h2">The work</h2>
+        <p class="intro">Six gears, from identity to motion. Each project shows the problem it had to solve and the decisions behind the result.</p>
+      </div>
+      <ul class="idx reveal" id="idx"></ul>
+    </div>
+  </section>
+
   <section class="ring" id="work">
     <div class="ring-stick">
       <h1 class="intro-name" id="introName"><span>Yasser</span><span class="b">Ajana</span></h1>
@@ -354,15 +364,6 @@ dialog::backdrop{background:rgba(26,20,16,.75);backdrop-filter:blur(6px)}
 
   <div class="marq" aria-hidden="true"><div id="marq"></div></div>
 
-  <section class="wrap sec" id="index">
-    <div class="contents">
-      <div class="reveal">
-        <h2 class="h2">The work</h2>
-        <p class="intro">Six gears, from identity to motion. Each project shows the problem it had to solve and the decisions behind the result.</p>
-      </div>
-      <ul class="idx reveal" id="idx"></ul>
-    </div>
-  </section>
 
   <section class="ai sec" id="ai">
     <div class="wrap">
@@ -398,7 +399,7 @@ dialog::backdrop{background:rgba(26,20,16,.75);backdrop-filter:blur(6px)}
     <div class="wrap">
       <div class="about-grid">
         <div class="portrait">
-          <div class="frame"><img id="portraitImg" src="assets/img/003.jpg" alt="Yasser in his helmet, leaning on his Kawasaki Z300 at night" loading="lazy"></div>
+          <div class="frame"><img id="portraitImg" src="assets/img/003.jpg" alt="Portrait of Yasser Ajana in a black suit" loading="lazy"></div>
           <div class="tag">Rider</div>
         </div>
         <div>
